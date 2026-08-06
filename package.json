@@ -1,0 +1,14 @@
+{
+  "name": "markup-generator-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Детерминированный конвейер Pixso JSON -> TSX по компонентам UI-KIT",
+  "bin": {
+    "markup-generate": "./scripts/generate.mjs"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "props": "node scripts/props-from-examples.mjs"
+  }
+}

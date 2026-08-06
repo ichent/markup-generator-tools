@@ -1,0 +1,21 @@
+{
+  "_note": "slot -> prop. '$children' = рендерить как текст-ребёнок. null = выкинуть слот. Ключи с _ игнорируются. Пер-компонентные оверрайды мержатся поверх _default.",
+  "_default": {
+    "Title": "label",
+    "value": "value",
+    "Placeholder": "placeholder",
+    "Text": "$children",
+    "Quantity": "count"
+  },
+  "Button": {
+    "Text": "$children",
+    "Quantity": "count"
+  },
+  "TextField": {},
+  "Combobox": {},
+  "DatePicker": {},
+  "Checkbox": {
+    "label": "label",
+    "description": "description"
+  }
+}
