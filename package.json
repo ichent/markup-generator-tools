@@ -8,7 +8,6 @@
     "markup-generate": "./scripts/generate.mjs"
   },
   "scripts": {
-    "generate": "node scripts/generate.mjs",
-    "props": "node scripts/props-from-examples.mjs"
+    "generate": "node scripts/generate.mjs"
   }
 }

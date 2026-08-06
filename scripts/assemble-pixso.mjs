@@ -4,9 +4,9 @@
 // Запуск (из корня проекта или откуда угодно):
 //   node scripts/assemble-pixso.mjs [gens/pixso-spec.json] [gens/GeneratedModal.tsx]
 //
-// Детерминированно. Пропсы компонентов пока берутся из текст-слотов Pixso;
-// точные имена пропсов сверяются с примерами сторибука через MCP get_examples
-// (это следующий слой). Пакеты-импорты — плейсхолдеры, поправишь под свой UI-KIT.
+// Детерминированный черновик. Имена пропсов — из data/prop-map.json (слоты Pixso).
+// Точный API UI-KIT в этот шаг не зашит: доводка — LLM + MCP / ручной prop-map.
+// Пакеты-импорты — плейсхолдеры под ваш UI-KIT.
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -25,35 +25,27 @@ const PLASMA_PKG = '@ui-kit/plasma';
 
 const CHILDREN = '$children'; // sentinel в prop-map: слот рендерится как текст-ребёнок
 
-// slot -> prop, из data/prop-map.json (глобальный _default + пер-компонентные оверрайды)
 const loadJson = (p, fallback) => (existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : fallback);
 const PROP_MAP = loadJson(join(DATA, 'prop-map.json'), {
   _default: { Title: 'label', value: 'value', Placeholder: 'placeholder', Text: CHILDREN, Quantity: 'count' },
 });
-// валидный набор пропсов из реальных примеров (gens/component-props.json), для проверки
-const COMPONENT_PROPS = loadJson(join(GENS, 'component-props.json'), {});
 
 const mappingFor = (name) => ({ ...(PROP_MAP._default ?? {}), ...(PROP_MAP[name] ?? {}) });
 
 const used = new Map(); // name -> kit ('df' | 'plasma' | 'local')
 const use = (name, kit) => used.set(name, kit);
-const warnings = [];
 
 const esc = (s) => String(s).replace(/"/g, '&quot;');
 const indent = (str, pad = '  ') => str.split('\n').map((l) => (l ? pad + l : l)).join('\n');
 
 function propsFromSlots(slots, name) {
   const map = mappingFor(name);
-  const valid = COMPONENT_PROPS[name]?.props; // undefined => валидацию пропускаем
   const props = [];
   let childText = null;
   for (const s of slots ?? []) {
     const p = map[s.slot];
-    if (p == null) continue; // нет маппинга или явный null — выкидываем
+    if (p == null) continue;
     if (p === CHILDREN) { childText = s.text; continue; }
-    if (valid && !valid.includes(p)) {
-      warnings.push(`${name}: проп "${p}" (слот "${s.slot}") не найден в примерах. Есть: ${valid.join(', ') || '—'}`);
-    }
     props.push(`${p}="${esc(s.text)}"`);
   }
   return { props, childText };
@@ -109,7 +101,6 @@ function render(node) {
     }
 
     case 'region': {
-      // вложенная зона (напр. "Header actions") — рендерим как Flow/фрагмент
       const inner = renderList(node.children);
       if (node.direction) {
         use('Flow', 'plasma');
@@ -140,11 +131,9 @@ function render(node) {
   }
 }
 
-// --- рендер тела ---
 const spec = JSON.parse(readFileSync(inPath, 'utf8')).spec ?? [];
 const bodyJsx = renderList(spec);
 
-// --- импорты по китам ---
 const names = (kit) => [...used].filter(([, k]) => k === kit).map(([n]) => n).sort();
 const dfNames = names('df');
 const plasmaNames = names('plasma');
@@ -154,7 +143,6 @@ const imports = [`import React from 'react';`];
 if (dfNames.length) imports.push(`import { ${dfNames.join(', ')} } from '${DF_PKG}';`);
 if (plasmaNames.length) imports.push(`import { ${plasmaNames.join(', ')} } from '${PLASMA_PKG}';`);
 
-// локальные заглушки (Icon/Fake), чтобы файл был самодостаточным
 const stubs = [];
 if (localNames.includes('Icon'))
   stubs.push(`const Icon = ({ name }: { name: string }) => <span data-icon={name} />;`);
@@ -180,12 +168,4 @@ console.log(`Готово: ${outPath}`);
 console.log(`  Импорт из DF (${DF_PKG}): ${dfNames.join(', ') || '—'}`);
 console.log(`  Импорт из Plasma (${PLASMA_PKG}): ${plasmaNames.join(', ') || '—'}`);
 console.log(`  Локальные заглушки: ${localNames.join(', ') || '—'}`);
-
-if (Object.keys(COMPONENT_PROPS).length === 0) {
-  console.log(`  ⓘ component-props.json нет — валидация пропсов пропущена (запусти props-from-examples.mjs)`);
-} else if (warnings.length) {
-  console.log(`\n  ⚠ Предупреждения по пропсам (${[...new Set(warnings)].length}):`);
-  for (const w of [...new Set(warnings)]) console.log(`    - ${w}`);
-} else {
-  console.log(`  ✔ Все пропсы совпали с примерами`);
-}
+console.log(`  ⓘ Черновик: точные пропсы — через prop-map.json или LLM + MCP`);

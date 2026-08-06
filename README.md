@@ -1,117 +1,92 @@
 # markup-generator-tools
 
-Детерминированный конвейер: **Pixso JSON → TSX** по компонентам UI-KIT.  
-Без LLM на пути генерации: скрипты чистят макет, резолвят имена в два кита (DF + Plasma) и собирают разметку.
+Детерминированный конвейер: **Pixso JSON → черновик TSX** по компонентам UI-KIT.  
+Без LLM и **без доступа к исходникам** UI-KIT: достаточно двух `index.json` сторибука.
 
-## Схема работы
+Точный API пропсов и «живая» вёрстка — следующий слой (**LLM + MCP**), либо ручной `prop-map.json`.  
+Обогащение `index.json` (пропсы, алиасы) — с командой UI-KIT — улучшит и скрипты, и MCP.
+
+## Схема
 
 ```
 1) Pixso JSON
       │  экспорт объекта из Pixso
       ▼
 2) clean-pixso.mjs
-      │  убирает шум, роли (component/layout/region/…),
-      │  слоты текста, direction/gap из autoLayout
+      │  шум ↓, роли, слоты текста, direction/gap из autoLayout
       ▼  gens/pixso-clean.json
-3a) resolve-pixso.mjs
-      │  + data/storybook-df.json
-      │  + data/strybook-plasma.json   ← index.json обоих китов
-      │  имена → компоненты UI-KIT; layout → Flow; не найдено → fake
+3) resolve-pixso.mjs
+      │  + data/storybook-df.json      ← index.json текущего UI-KIT
+      │  + data/strybook-plasma.json  ← index.json родительского UI-KIT
+      │  имена → компоненты; layout → Flow; не найдено → fake
       ▼  gens/pixso-spec.json
-3b) props-from-examples.mjs          ← отдельно, по возможности
-      │  + те же index.json
-      │  + исходники .stories.tsx (хотя бы одного кита)
-      ▼  gens/component-props.json   (какие пропсы реально есть)
 4) assemble-pixso.mjs
-      │  + data/prop-map.json         (слот Pixso → имя пропа)
-      │  + component-props.json       (проверка, если есть)
-      ▼  gens/GeneratedModal.tsx
+      │  + data/prop-map.json         ← слот Pixso → имя пропа (черновик)
+      ▼  gens/GeneratedModal.tsx     ← черновик, не финальный прод-код
+      │
+5) (позже) LLM + MCP
+      │  get_component / get_examples по обоим китам
+      ▼  рабочая вёрстка
 ```
 
-`npm run generate` = шаги **2 → 3a → 4**.  
-Шаг **3b** не входит в generate — его запускают отдельно (`npm run props`).
+`npm run generate` = шаги **2 → 3 → 4**.
+
+### Что даёт `index.json`
+
+| Да | Нет (пока) |
+|----|------------|
+| Список имён компонентов | Полный API пропсов* |
+| Привязка к киту (DF / Plasma) | Примеры кода |
+| Отсечение docs-only | |
+
+\*Если команда UI-KIT положит пропсы/алиасы в index — скрипты и MCP смогут использовать это без исходников.
 
 ### Два UI-KIT
 
-| | DF (текущий) | Plasma (родительский) |
-|--|--------------|------------------------|
-| Имена | `data/storybook-df.json` | `data/strybook-plasma.json` |
-| Приоритет при коллизии имён | выше | ниже |
-| Исходники для пропсов | опционально | опционально |
+Оба индекса обязательны для полного резолва. При коллизии имён **DF побеждает Plasma**.  
+Исходники репозиториев **не нужны**.
 
-Можно передать **оба** `index.json`, а исходники — **только одного** кита.  
-Имена резолвятся по индексам; пропсы извлекаются только там, где есть `.stories.tsx`.  
-Для кита без исходников пропсы задаются вручную в `data/prop-map.json`.
-
-## Структура проекта
+## Структура
 
 ```
 markup-generator-tools/
-├── scripts/                 код
-│   ├── generate.mjs         обёртка clean → resolve → assemble
+├── scripts/
+│   ├── generate.mjs         clean → resolve → assemble
 │   ├── clean-pixso.mjs
 │   ├── resolve-pixso.mjs
-│   ├── assemble-pixso.mjs
-│   └── props-from-examples.mjs
-├── data/                    входные данные (правки руками)
+│   └── assemble-pixso.mjs
+├── data/
 │   ├── pixso-to-json.json   экспорт из Pixso
-│   ├── storybook-df.json    index.json текущего UI-KIT
-│   ├── strybook-plasma.json index.json родительского UI-KIT
-│   └── prop-map.json        слот Pixso → проп компонента
-├── gens/                    артефакты (в .gitignore, пересоздаются)
-│   ├── pixso-clean.json
-│   ├── pixso-spec.json
-│   ├── component-props.json
-│   └── GeneratedModal.tsx
+│   ├── storybook-df.json    index.json DF
+│   ├── strybook-plasma.json index.json Plasma
+│   └── prop-map.json        слот → проп (черновой маппинг)
+├── gens/                    артефакты (.gitignore)
 └── package.json
 ```
 
-Пути резолвятся от корня репозитория — можно запускать скрипты из любой директории.
-
 ## Быстрый старт
 
-### 1. Подготовка данных
+### 1. Данные
 
-1. Экспортируй объект из Pixso как JSON → положи в `data/pixso-to-json.json`  
-   (или передай путь аргументом).
-2. Положи `index.json` сторибуков:
-   - текущий кит → `data/storybook-df.json`
-   - родительский → `data/strybook-plasma.json`  
-     (допускается и имя `storybook-plasma.json`).
+1. Экспорт из Pixso → `data/pixso-to-json.json` (или путь аргументом).
+2. `index.json` текущего кита → `data/storybook-df.json`.
+3. `index.json` родительского кита → `data/strybook-plasma.json`  
+   (допускается имя `storybook-plasma.json`).
 
-### 2. (Опционально) Извлечь пропсы из примеров
-
-Нужен путь к **корню репозитория UI-KIT**, внутри которого лежат story-файлы  
-(типа `packages/storybook/src/stories/...`).
-
-```bash
-# исходники только DF — нормально
-npm run props -- /path/to/df-ui-kit
-
-# или явно по китам
-FRONTDRIVE_STORYBOOK_ROOT_DF=/path/to/df \
-FRONTDRIVE_STORYBOOK_ROOT_PLASMA=/path/to/plasma \
-npm run props
-```
-
-Результат: `gens/component-props.json`.
-
-### 3. Сгенерировать вёрстку
+### 2. Генерация черновика
 
 ```bash
 npm run generate
-# то же самое:
+# или:
 node scripts/generate.mjs
-
-# свои пути:
 node scripts/generate.mjs data/my-modal.json gens/MyModal.tsx
 ```
 
-Готовый файл: `gens/GeneratedModal.tsx` (или путь из аргумента).
+Результат: `gens/GeneratedModal.tsx`.
 
-### 4. Подправить маппинг пропсов
+### 3. Маппинг слотов (по желанию)
 
-`data/prop-map.json`:
+`data/prop-map.json` — как Pixso-слоты становятся атрибутами в черновике:
 
 ```json
 {
@@ -124,71 +99,51 @@ node scripts/generate.mjs data/my-modal.json gens/MyModal.tsx
   },
   "TextField": {
     "value": "defaultValue"
-  },
-  "Button": {
-    "Text": "$children",
-    "Quantity": "count"
   }
 }
 ```
 
-- `$children` — слот идёт в текст-ребёнка, не в атрибут  
+- `$children` — текст-ребёнок  
 - `null` — слот выкинуть  
-- ключи с `_` — комментарии, игнорируются  
 - блок с именем компонента мержится поверх `_default`
 
-После правок снова `npm run generate`.
+Это **черновик**, не истина API. Финальные пропсы — LLM + MCP или правка руками после генерации.
 
-## Переменные окружения
+### 4. Доводка (следующий этап)
 
-| Переменная | Назначение |
-|------------|------------|
-| `FRONTDRIVE_STORYBOOK_ROOT` | Общий ROOT исходников (фолбэк для обоих китов); можно передать argv |
-| `FRONTDRIVE_STORYBOOK_ROOT_DF` | ROOT только для DF |
-| `FRONTDRIVE_STORYBOOK_ROOT_PLASMA` | ROOT только для Plasma |
-| `FRONTDRIVE_KITS_DIR` | Директория с `storybook-df.json` / `strybook-plasma.json` |
-| `FRONTDRIVE_STORYBOOK_DF` | Полный путь к index DF |
-| `FRONTDRIVE_STORYBOOK_PLASMA` | Полный путь к index Plasma |
+Черновик + `pixso-spec.json` → LLM вызывает MCP (`get_examples` и т.д.) по **обоим** UI-KIT и приводит код к рабочему API.  
+Набор компонентов из спеки не менять; `fake` оставлять явными.
 
-По умолчанию индексы читаются из `data/`.
+Индексы и `prop-map` читаются из `data/`. Путь к исходникам UI-KIT **не используется**.
 
-## Что делают отдельные шаги
+## Шаги по отдельности
 
 | Скрипт | Вход | Выход |
 |--------|------|--------|
-| `clean-pixso.mjs` | сырой Pixso JSON | компактное дерево с ролями и слотами |
-| `resolve-pixso.mjs` | clean + оба index | спека: kit, Flow, fake |
-| `props-from-examples.mjs` | index + исходники | список валидных пропсов |
-| `assemble-pixso.mjs` | spec + prop-map | TSX |
-| `generate.mjs` | Pixso JSON | TSX (три шага подряд) |
+| `clean-pixso.mjs` | сырой Pixso | компактное дерево |
+| `resolve-pixso.mjs` | clean + два index | спека (kit / Flow / fake) |
+| `assemble-pixso.mjs` | spec + prop-map | черновик TSX |
+| `generate.mjs` | Pixso JSON | черновик TSX |
 
-### Как появляется Flow
+### Flow
 
-FRAME/GROUP без семантики компонента → роль `layout`.  
-Из Pixso `autoLayout.mode` берётся `HORIZONTAL` / `VERTICAL`, из `itemSpacing` — `gap`.  
-Resolve превращает layout в `Flow` (Plasma).  
-Assemble: `HORIZONTAL` → `direction="row"`, `VERTICAL` → `direction="column"`.
+FRAME/GROUP без семантики компонента → `layout`.  
+`autoLayout.mode` → `HORIZONTAL`/`VERTICAL`, `itemSpacing` → `gap`.  
+Resolve → `Flow` (Plasma). Assemble: `row` / `column`.
 
-### Если компонент не найден
+### Не найдено в index
 
-В спеке — `kind: "fake"` с именем из макета.  
-В TSX — заглушка `<Fake name="...">` и комментарий. Никаких «похожих» подстановок.
+`kind: "fake"` + имя из макета → в TSX заглушка `<Fake>` и комментарий. Без подбора «похожего».
 
-## Типичный цикл на новую модалку
+## Типичный цикл
 
 ```bash
-# один раз на машине (если есть исходники DF)
-npm run props -- /path/to/df-ui-kit
-
-# на каждый макет
-# 1. положить экспорт Pixso в data/pixso-to-json.json
-# 2. при необходимости поправить data/prop-map.json
+# положить Pixso JSON и актуальные index.json в data/
 npm run generate
-# 3. забрать gens/GeneratedModal.tsx в продукт
+# забрать gens/GeneratedModal.tsx → доводка LLM+MCP / руками
 ```
 
 ## Требования
 
-- Node.js (ESM, без внешних npm-зависимостей для пайплайна)
+- Node.js (ESM, без npm-зависимостей пайплайна)
 - Два `index.json` сторибука в `data/`
-- Для точных пропсов — доступ к исходникам хотя бы одного UI-KIT
