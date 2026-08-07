@@ -4,3 +4,6 @@ node_modules/
 # все сгенерированные артефакты (пересоздаются пайплайном)
 /gens/*
 !/gens/.gitkeep
+
+# глоссарии из scripts/build-glossary.mjs (data/<index>-glossary/)
+/data/*-glossary/
