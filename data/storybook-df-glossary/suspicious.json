@@ -1,0 +1,193 @@
+{
+  "items": [
+    {
+      "id": "Локальные компоненты/Table/RowsGrouping/API и пример простой реализации",
+      "term": "API и пример простой реализации",
+      "group": "Локальные компоненты/Table/RowsGrouping",
+      "stories": [
+        "Группировка строк - Группировка данных - Агрегация данных"
+      ],
+      "source": "./packages/storybook/src/stories/Table/Table.rowsGrouping/Table.rowsGrouping.simple.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/Custom render/Cell Context",
+      "term": "Cell Context",
+      "group": "Локальные компоненты/Table/Custom render",
+      "stories": [
+        "Работа с контекстом в кастомных ячейках"
+      ],
+      "source": "./packages/storybook/src/stories/Table/Table.customRender/Table.customRenderWithContext.stories.tsx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Cell Preview",
+      "term": "Cell Preview",
+      "group": "Локальные компоненты/TableCanvas",
+      "stories": [
+        "renderCellPreview",
+        "cellEditorAsPreview",
+        "renderCellPreview: 'none'"
+      ],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.CellPreview/TableCanvas.cellPreview.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Column Resize",
+      "term": "Column Resize",
+      "group": "Локальные компоненты/TableCanvas",
+      "stories": [
+        "minWidth / maxWidth",
+        "maxAutoWidth — базовый",
+        "maxAutoWidth + maxWidth (комбинация)",
+        "maxColumnAutoWidth (глобальный)",
+        "maxAutoWidth не ограничивает ручной ресайз"
+      ],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ColumnResize/TableCanvas.columnResize.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Copy-Paste-Fill",
+      "term": "Copy-Paste-Fill",
+      "group": "Локальные компоненты/TableCanvas",
+      "stories": [
+        "Полный пример (все возможности)",
+        "Перехват onBeforeCopy / onBeforePaste",
+        "copyData для кастомных ячеек",
+        "Валидация типов при вставке",
+        "Fill Handle — доступ к source row (onBeforeFill)",
+        "Кастомные хоткеи"
+      ],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.CopyPasteFill/TableCanvas.CopyPasteFill.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Custom renders",
+      "term": "Custom renders",
+      "group": "Локальные компоненты/TableCanvas",
+      "stories": [
+        "Кастомизация рендера ячеек шапки, данных, итоговых данных",
+        "Иконка при наведении на ячейку",
+        "Иконка активной ячейки"
+      ],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.CustomRender/TableCanvas.customRender.mdx"
+    },
+    {
+      "id": "Композиции/ErrorPage-Страницы ошибок",
+      "term": "ErrorPage-Страницы ошибок",
+      "group": "Композиции",
+      "stories": [
+        "400",
+        "401",
+        "403",
+        "403 - Две кнопки",
+        "404",
+        "409",
+        "500",
+        "502",
+        "503",
+        "503 - с кодом ошибки",
+        "Неизвестная ошибка - заполнение по умолчанию",
+        "Неизвестная ошибка - кастомное заполнение",
+        "Дополнительные статусы и их заполнение",
+        "500 - с идентификатором ошибки",
+        "503 - идентификатор без кнопок",
+        "Размер m",
+        "Размер s"
+      ],
+      "source": "./packages/storybook/src/stories/ErrorPage/ErrorPage.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Theme Override",
+      "term": "Theme Override",
+      "group": "Локальные компоненты/TableCanvas",
+      "stories": [
+        "Переопределение фона ячейки (bgCell)",
+        "Переопределение паддингов ячейки",
+        "Кастомный renderCell без лишних паддингов",
+        "Subrows: переопределение по уровню (lvl)",
+        "Фон + кастомный renderCell"
+      ],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ThemeOverride/TableCanvas.themeOverride.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/RowsGrouping/Комбинация фичи группировка строк и других фичей",
+      "term": "Комбинация фичи группировка строк и других фичей",
+      "group": "Локальные компоненты/Table/RowsGrouping",
+      "stories": [
+        "Комбинация фичи группировка строк и других фичей"
+      ],
+      "source": "./packages/storybook/src/stories/Table/Table.rowsGrouping/Table.rowsGrouping.stories.tsx"
+    },
+    {
+      "id": "Формы/Компоненты формы",
+      "term": "Компоненты формы",
+      "group": "Формы",
+      "stories": [
+        "Компоненты формы",
+        "Пример формы заполнения c использованием библиотеки Zod для валидации"
+      ],
+      "source": "./packages/storybook/src/stories/FormComponents/FormComponents.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/SelectingRow/Многоуровневая таблица",
+      "term": "Многоуровневая таблица",
+      "group": "Локальные компоненты/Table/SelectingRow",
+      "stories": [
+        "Многоуровневая таблица"
+      ],
+      "source": "./packages/storybook/src/stories/Table/Table.selecting/Table.selectingRow.subRow.stories.tsx"
+    },
+    {
+      "id": "Локальные компоненты/Table/SelectingRow/Общий Checkbox \"Выбрано\"",
+      "term": "Общий Checkbox \"Выбрано\"",
+      "group": "Локальные компоненты/Table/SelectingRow",
+      "stories": [
+        "Общий Checkbox \"Выбрано\""
+      ],
+      "source": "./packages/storybook/src/stories/Table/Table.selecting/Table.selectingRow.summary.stories.tsx"
+    },
+    {
+      "id": "Локальные компоненты/Table/SelectingRow/Пример кастомного выбора строк в группированной таблице",
+      "term": "Пример кастомного выбора строк в группированной таблице",
+      "group": "Локальные компоненты/Table/SelectingRow",
+      "stories": [
+        "Пример кастомного выбора строк в группированной таблице"
+      ],
+      "source": "./packages/storybook/src/stories/Table/Table.selecting/Table.selectingRow.rowsGrouping.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/SelectingRow/Пример кастомного выбора строк в группированной таблице",
+      "term": "Пример кастомного выбора строк в группированной таблице",
+      "group": "Локальные компоненты/TableCanvas/SelectingRow",
+      "stories": [
+        "Пример кастомного выбора строк в группированной таблице"
+      ],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Selecting/TableCanvas.selectingRow.rowsGrouping.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/SelectingRow/Простой пример",
+      "term": "Простой пример",
+      "group": "Локальные компоненты/Table/SelectingRow",
+      "stories": [
+        "Простой пример"
+      ],
+      "source": "./packages/storybook/src/stories/Table/Table.selecting/Table.selectingRow.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/SelectingRow/Ручная настройка выбор строк",
+      "term": "Ручная настройка выбор строк",
+      "group": "Локальные компоненты/Table/SelectingRow",
+      "stories": [
+        "Независимый выбор строк в иерархии",
+        "Ручная настройка выбора строк с учетом disabled, hidden строк"
+      ],
+      "source": "./packages/storybook/src/stories/Table/Table.selecting/Table.selectingRow.customRowSelection.stories.tsx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/SelectingRow/Ручная настройка выбор строк",
+      "term": "Ручная настройка выбор строк",
+      "group": "Локальные компоненты/TableCanvas/SelectingRow",
+      "stories": [
+        "Независимый выбор строк в иерархии",
+        "Ручная настройка выбора строк с учетом disabled, hidden строк"
+      ],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Selecting/TableCanvas.selectingRow.customRowSelection.stories.tsx"
+    }
+  ]
+}

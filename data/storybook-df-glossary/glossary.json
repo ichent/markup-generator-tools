@@ -1,0 +1,1020 @@
+{
+  "version": 1,
+  "boundedContext": "design-system",
+  "sourceIndex": "/Users/ivank/me/dev/ai-projects/markup-generator-tools/data/storybook-df.json",
+  "generatedAt": "2026-08-07T20:53:13.842Z",
+  "components": [
+    {
+      "id": "Локальные компоненты/AiAgentPopover",
+      "term": "AiAgentPopover",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Resizable",
+        "Example"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/AiAgentPopover/AiAgentPopover.mdx"
+    },
+    {
+      "id": "Композиции/AnalyticalWidget",
+      "term": "AnalyticalWidget",
+      "group": "Композиции",
+      "kind": "component",
+      "stories": [
+        "Analytical Widget L",
+        "Analytical Widget M",
+        "Analytical Widget S"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/AnalyticalWidget/AnalyticalWidget.mdx"
+    },
+    {
+      "id": "Локальные компоненты/ApprovalCenter",
+      "term": "ApprovalCenter",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Preview",
+        "Loading preview",
+        "With tabs",
+        "Without tabs",
+        "With scroll"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/ApprovalCenter/ApprovalCenter.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Autocomplete",
+      "term": "Autocomplete",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Размеры",
+        "Различные варианты"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/Autocomplete/Autocomplete.mdx"
+    },
+    {
+      "id": "Локальные компоненты/AutocompleteSearch",
+      "term": "AutocompleteSearch",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Размеры",
+        "Различные варианты"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/AutoCompleteSearch/AutoCompleteSearch.mdx"
+    },
+    {
+      "id": "Локальные компоненты/BlockGradientScroll",
+      "term": "BlockGradientScroll",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "1. Базовый компонент",
+        "2. Миксин (styled-components)",
+        "3. Мало контента (без скролла)",
+        "4. Несколько контейнеров",
+        "5. Динамический контент",
+        "6. Способы стилизации (style, className, $css)",
+        "1280 Адаптив"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/BlockGradientScroll/BlockGradientScroll.mdx"
+    },
+    {
+      "id": "Композиции/BlockTitle",
+      "term": "BlockTitle",
+      "group": "Композиции",
+      "kind": "component",
+      "stories": [
+        "BlockTitle Slots",
+        "BlockTitle Example",
+        "BlockTitle с Badge",
+        "BlockTitle с кнопкой назад",
+        "BlockTitle с кнопкой назад и иконкой"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/BlockTitle/BlockTitle.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Box",
+      "term": "Box",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Box",
+        "Стилизация через CSS Object",
+        "Стилизация через CSS String",
+        "Стилизация через props",
+        "React компонент корневого узла",
+        "HTML корневого узла"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/Box/Box.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Collapse",
+      "term": "Collapse",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Collapse",
+        "Горизонтальная ориентация",
+        "Unmount",
+        "Длительность анимации",
+        "Тип анимации",
+        "Размер открытого контейнера",
+        "Размер закрытого контейнера"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/Collapse/Collapse.mdx"
+    },
+    {
+      "id": "Композиции/Container",
+      "term": "Container",
+      "group": "Композиции",
+      "kind": "component",
+      "stories": [
+        "Контейнер",
+        "Растянуть",
+        "Сплит (30/70)",
+        "Сплит (1/1/1)",
+        "Сплит (1/3/1)",
+        "Сплит (fixed-fluid)"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/Container/Container.mdx"
+    },
+    {
+      "id": "Локальные компоненты/DrawerDF",
+      "term": "DrawerDF",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "DrawerDF with one content",
+        "DrawerDF with multiple content",
+        "DrawerDF with single content (no header, no footer)",
+        "DrawerDF with back button"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/DrawerDF/Drawer.mdx"
+    },
+    {
+      "id": "Композиции/EmptyState",
+      "term": "EmptyState",
+      "group": "Композиции",
+      "kind": "component",
+      "stories": [
+        "Small (s)",
+        "Medium (m)",
+        "Large (l)"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/EmptyState/EmptyState.mdx"
+    },
+    {
+      "id": "Композиции/FiltersActions",
+      "term": "FiltersActions",
+      "group": "Композиции",
+      "kind": "component",
+      "stories": [
+        "FiltersActions с адаптивностью",
+        "FiltersActions без адаптивности",
+        "FiltersActions с кастомным таргетом Popover"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/FiltersActions/FiltersActions.mdx"
+    },
+    {
+      "id": "Локальные компоненты/GridDND",
+      "term": "GridDND",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Задержка активации D&D (dragActivationDelay)",
+        "GridDND Classic",
+        "Самоизменение типа виджета (через onResize)"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/GridDND/GridDND.mdx"
+    },
+    {
+      "id": "Композиции/Layout",
+      "term": "Layout",
+      "group": "Композиции",
+      "kind": "component",
+      "stories": [
+        "V1_1: Одноколоночная",
+        "V2_1: Две колонки (основная слева)",
+        "V2_2: Две колонки (основная справа)",
+        "V3_1: Две колонки справа узкая",
+        "V3_2: Две колонки слева узкая",
+        "V3_3: Три колонки (центр шире)",
+        "V4_1: Две равные колонки",
+        "V4_2: Три равные колонки",
+        "V5_1: Фиксир. слева + центрир.",
+        "Кастомные отступы",
+        "Кастомные классы"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/Layout/Layout.mdx"
+    },
+    {
+      "id": "Композиции/LeftPanel",
+      "term": "LeftPanel",
+      "group": "Композиции",
+      "kind": "component",
+      "stories": [
+        "LeftPanel со слотами",
+        "Example"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/LeftPanel/LeftPanel.mdx"
+    },
+    {
+      "id": "Локальные компоненты/MassActions",
+      "term": "MassActions",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Standalone MassActions",
+        "С явным контролем видимости (show)",
+        "Узкий контейнер (компрессия)",
+        "В комбинации с LeftPanel",
+        "1280 Адаптив"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/MassActions/MassActions.mdx"
+    },
+    {
+      "id": "Локальные компоненты/ModalDF",
+      "term": "ModalDF",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "ModalDF",
+        "ModalDF с доп. блоком слева",
+        "ModalDF с большим количеством контента",
+        "ModalDF без шапки и футера"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/ModalDF/ModalDF.mdx"
+    },
+    {
+      "id": "Локальные компоненты/ModalDFConfirmation",
+      "term": "ModalDFConfirmation",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Пример сохранения",
+        "Примеры разных view и иконок",
+        "Пример c кастомным footer-oм"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/ModalDFConfirmation/ModalDFConfirmation.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Notification",
+      "term": "Notification",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Примеры разных view"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/Notification/Notification.mdx"
+    },
+    {
+      "id": "Локальные компоненты/NumberFormatAmount",
+      "term": "NumberFormatAmount",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Размеры",
+        "Различные варианты"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/NumberFormatAmount/NumberFormatAmount.mdx"
+    },
+    {
+      "id": "Композиции/PageLayout",
+      "term": "PageLayout",
+      "group": "Композиции",
+      "kind": "component",
+      "stories": [
+        "Базовый",
+        "Двухколоночная раскладка",
+        "Страничный скролл",
+        "SplitView (toggle sidebar)",
+        "SplitView + длинный контент",
+        "LeftPanel + Layout",
+        "LeftPanel + SplitView",
+        "LeftPanel + SplitView + скролл",
+        "Для шапки микрофронта"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/PageLayout/PageLayout.mdx"
+    },
+    {
+      "id": "Композиции/PageTitle",
+      "term": "PageTitle",
+      "group": "Композиции",
+      "kind": "component",
+      "stories": [
+        "PageTitle",
+        "PageTitle с кастомным слотом",
+        "PageTitle без breadcrumbs",
+        "PageTitle с длинным заголовком"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/PageTitle/PageTitle.mdx"
+    },
+    {
+      "id": "Локальные компоненты/PopoverDF",
+      "term": "PopoverDF",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Simple",
+        "Playground"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/PopoverDF/PopoverDF.Docs.mdx"
+    },
+    {
+      "id": "Локальные компоненты/PopupDF",
+      "term": "PopupDF",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Simple",
+        "Playground"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/PopupDF/PopupDF.Docs.mdx"
+    },
+    {
+      "id": "Композиции/SplitView",
+      "term": "SplitView",
+      "group": "Композиции",
+      "kind": "component",
+      "stories": [
+        "SplitView",
+        "SplitView + Tabs Icon Vertical"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/SplitView/SplitView.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Stories",
+      "term": "Stories",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Круглые триггеры",
+        "Прямоугольные триггеры",
+        "Спиннер загрузки (эмуляция)",
+        "Ошибка: дефолтный EmptyState + ретрай",
+        "Ошибка: кастомный контент (renderError)",
+        "Внешнее управление через ref",
+        "Триггеры внутри ModalDF",
+        "Стрелки скрыты (arrows=\"never\")",
+        "Подписи: 2 строки, ellipsis, выравнивание"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/Stories/Stories.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Switch",
+      "term": "Switch",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Example"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/Switch/Switch.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table",
+      "term": "Table",
+      "group": "Локальные компоненты",
+      "kind": "aggregate",
+      "stories": [],
+      "features": [
+        {
+          "name": "API / columnConfig",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/API/Table.columnConfig.stories.tsx"
+        },
+        {
+          "name": "API / Table",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/API/Table.table.stories.tsx"
+        },
+        {
+          "name": "API / tableConfig",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/API/Table.tableConfig.stories.tsx"
+        },
+        {
+          "name": "Collapsing",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/Table/Table.collapsing/Table.collapsing.mdx"
+        },
+        {
+          "name": "ColumnResizing",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.columnResizing/Table.columnResizing.mdx"
+        },
+        {
+          "name": "ColumnsControl",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.columnsControl/Table.columnsControl.mdx"
+        },
+        {
+          "name": "ColumnsGrouping",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.columnsGrouping/Table.columnsGrouping.mdx"
+        },
+        {
+          "name": "ContextMenu",
+          "examples": 7,
+          "source": "./packages/storybook/src/stories/Table/Table.contextMenu/Table.contextMenu.mdx"
+        },
+        {
+          "name": "Contract",
+          "examples": 5,
+          "source": "./packages/storybook/src/stories/Table/Table.contract/Table.contract.mdx"
+        },
+        {
+          "name": "ControlBlock",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.controlBlock/Table.controlBlock.mdx"
+        },
+        {
+          "name": "ControlBlock / MassPanelAction",
+          "examples": 5,
+          "source": "./packages/storybook/src/stories/Table/Table.controlBlock/Table.massPanelAction.mdx"
+        },
+        {
+          "name": "Custom render / Cell",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.customRender/Table.customRender.mdx"
+        },
+        {
+          "name": "Custom render / HeaderCell",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.customRender/Table.customRenderHeaderCell.stories.tsx"
+        },
+        {
+          "name": "Custom render / Summary",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.customRender/Table.customRenderSummary.stories.tsx"
+        },
+        {
+          "name": "DomMetadata",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.domMetadata/Table.domMetadata.mdx"
+        },
+        {
+          "name": "Editing",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/Table/Table.editing/Table.editing.mdx"
+        },
+        {
+          "name": "Filtering / Manual",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.filtering/Table.manualFiltering.stories.tsx"
+        },
+        {
+          "name": "Filtering / Simple",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/Table/Table.filtering/Table.filtering.mdx"
+        },
+        {
+          "name": "FormatCellContent",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.formatCellContent/Table.formatCellContent.mdx"
+        },
+        {
+          "name": "FullScreenMode",
+          "examples": 3,
+          "source": "./packages/storybook/src/stories/Table/Table.fullScreenMode/Table.fullSceenMode.mdx"
+        },
+        {
+          "name": "HighlightActiveType",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.highlightActiveType/Table.highlightActiveType.mdx"
+        },
+        {
+          "name": "InfinityScroll",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.infinityScroll/Table.infinityScroll.mdx"
+        },
+        {
+          "name": "IsLoading",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.isLoading/Table.isLoading.mdx"
+        },
+        {
+          "name": "KeyText",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.keyText/Table.keyText.mdx"
+        },
+        {
+          "name": "MultipleFeatures",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.multipleFeatures.stories.tsx"
+        },
+        {
+          "name": "No Rows Fallback / Custom",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.noRowsFallback/Table.noRowsCustomFallback.stories.tsx"
+        },
+        {
+          "name": "No Rows Fallback / Simple",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.noRowsFallback/Table.noRowsFallback.mdx"
+        },
+        {
+          "name": "Pagination",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/Table/Table.pagination/Table.pagination.mdx"
+        },
+        {
+          "name": "RowDetailPanel / Simple",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.rowDetailPanel/Table.rowDetailPanel.mdx"
+        },
+        {
+          "name": "RowDetailPanel / WithSubRows",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.rowDetailPanel/Table.rowDetailPanelAndsubRows.stories.tsx"
+        },
+        {
+          "name": "RowHeight",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.rowHeight/Table.rowHeight.mdx"
+        },
+        {
+          "name": "RowInstruments",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/Table/Table.rowInstruments/Table.rowInstruments.mdx"
+        },
+        {
+          "name": "RowSize",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.rowSize/Table.rowSize.mdx"
+        },
+        {
+          "name": "Searching",
+          "examples": 4,
+          "source": "./packages/storybook/src/stories/Table/Table.searching/Table.searching.mdx"
+        },
+        {
+          "name": "Sidebar",
+          "examples": 4,
+          "source": "./packages/storybook/src/stories/Table/Table.sidebar/Table.sidebar.mdx"
+        },
+        {
+          "name": "SimpleTable",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/Table/Table.simple/Table.simple.mdx"
+        },
+        {
+          "name": "Sorting / Manual",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.sorting/Table.manualSorting.stories.tsx"
+        },
+        {
+          "name": "Sorting / Simple",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.sorting/Table.sroting.mdx"
+        },
+        {
+          "name": "SubRows",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.subRows/Table.subRows.mdx"
+        },
+        {
+          "name": "SummaryRows",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.summaryRows/Table.summaryRows.mdx"
+        },
+        {
+          "name": "Virtualization",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/Table/Table.virtualization/Table.virtualization.mdx"
+        }
+      ],
+      "source": null
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas",
+      "term": "TableCanvas",
+      "group": "Локальные компоненты",
+      "kind": "aggregate",
+      "stories": [],
+      "features": [
+        {
+          "name": "CanvasElements / CanvasBadge",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasBadge/CanvasBadge.mdx"
+        },
+        {
+          "name": "CanvasElements / CanvasButton",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasButton/CanvasButton.mdx"
+        },
+        {
+          "name": "CanvasElements / CanvasCheckbox",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasCheckbox/CanvasCheckbox.mdx"
+        },
+        {
+          "name": "CanvasElements / CanvasContainer",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasContainer/CanvasContainer.mdx"
+        },
+        {
+          "name": "CanvasElements / CanvasEmbedIconButton",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasEmbedIconButton/CanvasEmbedIconButton.mdx"
+        },
+        {
+          "name": "CanvasElements / CanvasIcon",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasIcon/CanvasIcon.mdx"
+        },
+        {
+          "name": "CanvasElements / CanvasIconButton",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasIconButton/CanvasIconButton.mdx"
+        },
+        {
+          "name": "CanvasElements / CanvasLink",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasLink/CanvasLink.mdx"
+        },
+        {
+          "name": "CanvasElements / CanvasSkeleton",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasSkeleton/CanvasSkeleton.mdx"
+        },
+        {
+          "name": "CanvasElements / CanvasText",
+          "examples": 3,
+          "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasText/CanvasText.mdx"
+        },
+        {
+          "name": "CellsSelection",
+          "examples": 4,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.CellsSelection/TableCanvas.cellsSelection.mdx"
+        },
+        {
+          "name": "Collapsing",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Collapsing/TableCanvas.collapsing.mdx"
+        },
+        {
+          "name": "ColumnsControl",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ColumnsControl/TableCanvas.columnsControl.mdx"
+        },
+        {
+          "name": "ColumnsGrouping",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ColumnsGrouping/TableCanvas.columnsGrouping.mdx"
+        },
+        {
+          "name": "ContextMenu",
+          "examples": 8,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ContextMenu/TableCanvasContextMenu.mdx"
+        },
+        {
+          "name": "ControlBlock",
+          "examples": 6,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ControlBlock/TableCanvas.controlBlock.mdx"
+        },
+        {
+          "name": "ControlBlock / APE",
+          "examples": 6,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ControlBlock/TableCanvas.controlBlockApe/TableCanvas.controlBlockApe.mdx"
+        },
+        {
+          "name": "ControlBlock / MassPanelAction",
+          "examples": 6,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ControlBlock/TableCanvas.massPanelAction/TableCanvas.massPanelAction.mdx"
+        },
+        {
+          "name": "ControlBlock / SplitIconButton",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ControlBlock/TableCanvas.splitIconButton.mdx"
+        },
+        {
+          "name": "DomMetadata",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.DomMetadata/TableCanvas.domMetadata.mdx"
+        },
+        {
+          "name": "Editing",
+          "examples": 3,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Editing/TableCanvas.editing.mdx"
+        },
+        {
+          "name": "EmptyState",
+          "examples": 5,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.EmptyState/Table.emptyState.docs.mdx"
+        },
+        {
+          "name": "ErrorState",
+          "examples": 5,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ErrorState/TableCanvas.errorState.docs.mdx"
+        },
+        {
+          "name": "Filtering",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Filtering/TableCanvas.filtering.mdx"
+        },
+        {
+          "name": "Filtering / Manual",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Filtering/TableCanvas.manualFiltering.stories.tsx"
+        },
+        {
+          "name": "FormatCellContent",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.FormatCellContent/TableCanvas.formatCellContent.mdx"
+        },
+        {
+          "name": "FullScreenMode",
+          "examples": 3,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.FullScreenMode/TableCanvas.fullScreenMode.mdx"
+        },
+        {
+          "name": "HighlightActiveType",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.HighlightActiveType/TableCanvas.highlightActiveType.mdx"
+        },
+        {
+          "name": "HighlightActiveType / SplitView",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.HighlightActiveType/TableCanvas.highlightActiveTypeSplitView.mdx"
+        },
+        {
+          "name": "HoverEffects",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.HoverEffects/TableCanvas.hoverEffects.mdx"
+        },
+        {
+          "name": "InfinityScroll",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.InfinityScroll/TableCanvasInfinityScroll.mdx"
+        },
+        {
+          "name": "IsLoading",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.IsLoading/TableCanvas.isLoading.mdx"
+        },
+        {
+          "name": "KeyText",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.KeyText/TableCanvas.keyText.mdx"
+        },
+        {
+          "name": "MultipleFeatures",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.MultipleFeatures/TableCanvas.multipleFeatures.stories.tsx"
+        },
+        {
+          "name": "Notifications",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Notifications/TableCanvas.notifications.mdx"
+        },
+        {
+          "name": "Pagination",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Pagination/Table.pagination.mdx"
+        },
+        {
+          "name": "RowHeight",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.RowHeight/TableCanvas.rowHeight.mdx"
+        },
+        {
+          "name": "RowMarkers",
+          "examples": 9,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.RowMarkers/TableCanvas.rowMarkers.mdx"
+        },
+        {
+          "name": "RowsGrouping",
+          "examples": 2,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.RowsGrouping/TableCanvas.rowsGrouping.mdx"
+        },
+        {
+          "name": "Searching",
+          "examples": 4,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Searching/TableCanvas.searching.mdx"
+        },
+        {
+          "name": "SelectingRow / Simple",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Selecting/TableCanvas.selectingRow.mdx"
+        },
+        {
+          "name": "SelectingRow / WithSubRows",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Selecting/TableCanvas.selectingRow.subRow.stories.tsx"
+        },
+        {
+          "name": "SelectingRow / WithSubRowsAndInfinityScroll",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Selecting/TableCanvas.selectingRow.infinityScroll.stories.tsx"
+        },
+        {
+          "name": "Sidebar",
+          "examples": 4,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Sidebar/Table.sidebar.mdx"
+        },
+        {
+          "name": "SimpleTable",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.SimpleTable/TableCanvas.simple.stories.tsx"
+        },
+        {
+          "name": "Sorting / Manual",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Sorting/TableCanvas.manualSorting.stories.tsx"
+        },
+        {
+          "name": "Sorting / Simple",
+          "examples": 3,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Sorting/TableCanvas.sorting.mdx"
+        },
+        {
+          "name": "SubRows",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.SubRows/TableCanvas.subRows.mdx"
+        },
+        {
+          "name": "SummaryRows",
+          "examples": 1,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.SummaryRows/TableCanvas.summaryRows.mdx"
+        },
+        {
+          "name": "Tooltip",
+          "examples": 4,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Tooltip/TableCanvas.Tooltip.mdx"
+        },
+        {
+          "name": "UnstickyHeader",
+          "examples": 4,
+          "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.UnstickyHeader/TableCanvas.unstickyHeader.mdx"
+        }
+      ],
+      "source": null
+    },
+    {
+      "id": "Локальные компоненты/TableContract",
+      "term": "TableContract",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Simple",
+        "Pagination",
+        "Searching",
+        "Sorting",
+        "Sub Rows",
+        "Editing",
+        "All Feats"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/TableContract/Docs.backend.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableTabs",
+      "term": "TableTabs",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Table в табах",
+        "TableCanvas в табах",
+        "TableCanvas без заданого статичного размера, на доступную высоту",
+        "Table + TableCanvas"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/TableTabs/TableTabs.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TextArea",
+      "term": "TextArea",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Размеры",
+        "Различные варианты"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/TextArea/TextArea.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TextField",
+      "term": "TextField",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Размеры",
+        "Различные варианты"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/TextField/TextField.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TextFieldSearch",
+      "term": "TextFieldSearch",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Размеры",
+        "Различные варианты"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/TextFieldSearch/TextFieldSearch.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TooltipList",
+      "term": "TooltipList",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "With Combobox"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/TooltipList/TooltipList.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TourWidget",
+      "term": "TourWidget",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Вертикальный тур",
+        "Горизонтальный тур",
+        "Тур рядом с пульсацией",
+        "Пульсация",
+        "Тур без контента"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/TourWidget/TourWidget.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Typography",
+      "term": "Typography",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "All Variants",
+        "With Styles",
+        "Text With Different Tags"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/Typography/Typography.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TypographyWithAutoTooltip",
+      "term": "TypographyWithAutoTooltip",
+      "group": "Локальные компоненты",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Interactive Demo"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/TypographyWithTooltip/TypographyWithTooltip.mdx"
+    },
+    {
+      "id": "Композиции/Widget",
+      "term": "Widget",
+      "group": "Композиции",
+      "kind": "component",
+      "stories": [
+        "Widget",
+        "WidgetTextContent",
+        "Footer leftBlock — проблема вертикального центрирования"
+      ],
+      "features": [],
+      "source": "./packages/storybook/src/stories/Widget/Widget.mdx"
+    }
+  ]
+}

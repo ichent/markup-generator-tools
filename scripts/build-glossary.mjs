@@ -1,32 +1,39 @@
 #!/usr/bin/env node
 // Ubiquitous language: собрать глоссарий компонентов из Storybook index.json
 //
-// Запуск:
-//   node build-glossary.mjs ./storybook-static/index.json [флаги]
+// Запуск (из корня проекта или откуда угодно):
+//   node scripts/build-glossary.mjs data/storybook-df.json [флаги]
+//
+// Артефакты → data/<basename>-glossary/
+//   пример: data/storybook-df.json → data/storybook-df-glossary/{glossary.json, …}
 //
 // Флаги (опциональны, по умолчанию выключены):
-//   --seed-overlay    заполнить overlay.json черновыми summary/whenToUse (B)
-//   --merge-overlay   вмерджить overlay.json (смысл + алиасы Pixso) в артефакты (A)
+//   --seed-overlay    заполнить overlay.json черновыми summary/whenToUse
+//   --merge-overlay   вмерджить overlay.json в glossary.json и GLOSSARY.md
 //   --help            показать справку
 //
 // Ничего не скачивает, не требует npm install, не ходит в интернет.
 
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const here = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const DATA = join(ROOT, "data");
 
 // --- 1. аргументы и флаги ---
 const args = process.argv.slice(2);
 const flags = new Set(args.filter((a) => a.startsWith("--")));
 const indexPath = args.find((a) => !a.startsWith("--"));
-const SEED = flags.has("--seed-overlay");   // B: черновые описания в overlay.json
-const MERGE = flags.has("--merge-overlay");  // A: overlay -> glossary.json + GLOSSARY.md
+const SEED = flags.has("--seed-overlay");
+const MERGE = flags.has("--merge-overlay");
 
 if (flags.has("--help") || !indexPath) {
   console.log(`Использование:
-  node build-glossary.mjs <path/to/index.json> [флаги]
+  node scripts/build-glossary.mjs <path/to/index.json> [флаги]
+
+Артефакты пишутся в data/<имя-файла>-glossary/
+  пример: data/storybook-df.json → data/storybook-df-glossary/
 
 Флаги:
   --seed-overlay    заполнить overlay.json черновыми summary/whenToUse по известным
@@ -36,7 +43,18 @@ if (flags.has("--help") || !indexPath) {
   --help            показать эту справку`);
   process.exit(indexPath ? 0 : 1);
 }
-const index = JSON.parse(readFileSync(indexPath, "utf8"));
+
+const indexAbs = resolve(indexPath);
+if (!existsSync(indexAbs)) {
+  console.error(`✖ Файл не найден: ${indexAbs}`);
+  process.exit(1);
+}
+
+const stem = basename(indexAbs).replace(/\.json$/i, "");
+const outDir = join(DATA, `${stem}-glossary`);
+mkdirSync(outDir, { recursive: true });
+
+const index = JSON.parse(readFileSync(indexAbs, "utf8"));
 const entries = Object.values(index.entries ?? {});
 
 // --- 2. группируем записи по title (title = имя компонента) ---
@@ -157,12 +175,13 @@ for (const c of components) byCategory.set(c.group, (byCategory.get(c.group) ?? 
 const glossary = {
   version: 1,
   boundedContext: "design-system",
+  sourceIndex: indexAbs,
   generatedAt: new Date().toISOString(),
   components,
 };
 
 // --- 4. overlay: синхронизируем ключи (не теряя ручные правки) + опц. сидинг ---
-const overlayPath = join(here, "overlay.json");
+const overlayPath = join(outDir, "overlay.json");
 const existingOverlay = existsSync(overlayPath)
   ? JSON.parse(readFileSync(overlayPath, "utf8")).components ?? {}
   : {};
@@ -199,12 +218,12 @@ if (MERGE) {
 }
 
 // --- 5.1 пишем машиночитаемый глоссарий ---
-writeFileSync(join(here, "glossary.json"), JSON.stringify(glossary, null, 2) + "\n");
+writeFileSync(join(outDir, "glossary.json"), JSON.stringify(glossary, null, 2) + "\n");
 
 // --- 6. отделяем шум в свои файлы, чтобы глазами проверить ---
-writeFileSync(join(here, "docs-only.json"),
+writeFileSync(join(outDir, "docs-only.json"),
   JSON.stringify({ items: docsOnly }, null, 2) + "\n");
-writeFileSync(join(here, "suspicious.json"),
+writeFileSync(join(outDir, "suspicious.json"),
   JSON.stringify({ items: suspicious }, null, 2) + "\n");
 
 // --- 6.5 читаемый GLOSSARY.md = сам ubiquitous language ---
@@ -215,7 +234,7 @@ for (const c of components) {
 }
 
 let md = `# Ubiquitous Language — Design System\n\n`;
-md += `> Сгенерировано автоматически из Storybook \`index.json\`. Не редактируй руками — правь через overlay.\n\n`;
+md += `> Сгенерировано из \`${basename(indexAbs)}\`. Не редактируй руками — правь через overlay.json в этой папке.\n\n`;
 md += `Всего терминов: **${components.length}**\n`;
 for (const [category, list] of [...cats].sort((a, b) => b[1].length - a[1].length)) {
   md += `\n## ${category} (${list.length})\n\n`;
@@ -234,12 +253,12 @@ for (const [category, list] of [...cats].sort((a, b) => b[1].length - a[1].lengt
     for (const f of a.features) md += `- ${f.name} — ${f.examples} прим.\n`;
   }
 }
-writeFileSync(join(here, "GLOSSARY.md"), md);
+writeFileSync(join(outDir, "GLOSSARY.md"), md);
 
 // --- 7. краткий отчёт ---
 const nComp = components.filter((c) => c.kind === "component").length;
 const nAgg = components.filter((c) => c.kind === "aggregate").length;
-console.log(`Готово.`);
+console.log(`Готово → ${outDir}`);
 console.log(`  Терминов всего:                    ${components.length}  -> glossary.json`);
 console.log(`    из них самостоятельных:          ${nComp}`);
 console.log(`    из них агрегатов (с фичами):     ${nAgg}`);

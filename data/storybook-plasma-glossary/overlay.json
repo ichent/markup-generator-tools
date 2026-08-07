@@ -1,0 +1,404 @@
+{
+  "components": {
+    "Data Display/Accordion": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Attach": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Autocomplete": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Avatar": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/AvatarGroup": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Badge": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Navigation/Breadcrumbs": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Button": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/ButtonGroup": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Calendar": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Card": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Navigation/Carousel": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Cell": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Checkbox": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Chip": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/ChipGroup": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/CodeField": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/CodeInput": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Tokens/Colors": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Combobox": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Counter": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "_Beta/Data Entry": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/DatePicker": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/DateTimePicker": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Divider": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Overlay/Drawer": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Dropdown": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Dropzone": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/EmbedIconButton": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/EmptyState": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Layout/Flow": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Layout/Grid": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/IconButton": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Image": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Indicator": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/InformationWrapper": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Navigation/Link": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/LinkButton": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/List": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Mask": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Overlay/Modal": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Note": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Overlay/Notification": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/NumberFormat": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/NumberInput": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "_Beta/Overlay": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Overlay/Overlay": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Navigation/Pagination": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Overlay/Popover": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Overlay/Popup": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Portal": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Price": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Overlay/Progress": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Overlay/ProgressBarCircular": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Radiobox": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Range": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Rating": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Segment": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Select": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Overlay/Sheet": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Skeleton": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Slider": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Tokens/Spacing": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Spinner": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Navigation/Steps": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Switch": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Table": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Navigation/Tabs": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/TextArea": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/TextField": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/TextFieldGroup": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/TimePicker": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Overlay/Toast": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Overlay/Toolbar": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Overlay/Tooltip": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Navigation/Tour": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Entry/Tree": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Tokens/Typography": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/Typography": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Data Display/ViewContainer": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    }
+  }
+}

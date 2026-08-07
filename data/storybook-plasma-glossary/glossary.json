@@ -1,0 +1,958 @@
+{
+  "version": 1,
+  "boundedContext": "design-system",
+  "sourceIndex": "/Users/ivank/me/dev/ai-projects/markup-generator-tools/data/storybook-plasma.json",
+  "generatedAt": "2026-08-07T20:53:20.205Z",
+  "components": [
+    {
+      "id": "Data Display/Accordion",
+      "term": "Accordion",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Controlled"
+      ],
+      "features": [],
+      "source": "./src/components/Accordion/Accordion.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Attach",
+      "term": "Attach",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "With Information Wrapper"
+      ],
+      "features": [],
+      "source": "./src/components/Attach/Attach.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Autocomplete",
+      "term": "Autocomplete",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Autocomplete/Autocomplete.stories.tsx"
+    },
+    {
+      "id": "Data Display/Avatar",
+      "term": "Avatar",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Accessibility"
+      ],
+      "features": [],
+      "source": "./src/components/Avatar/Avatar.stories.tsx"
+    },
+    {
+      "id": "Data Display/AvatarGroup",
+      "term": "AvatarGroup",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Dynamic Size",
+        "Accessibility"
+      ],
+      "features": [],
+      "source": "./src/components/AvatarGroup/AvatarGroup.stories.tsx"
+    },
+    {
+      "id": "Data Display/Badge",
+      "term": "Badge",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Badge/Badge.stories.tsx"
+    },
+    {
+      "id": "Navigation/Breadcrumbs",
+      "term": "Breadcrumbs",
+      "group": "Navigation",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Custom Shorter"
+      ],
+      "features": [],
+      "source": "./src/components/Breadcrumbs/Breadcrumbs.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Button",
+      "term": "Button",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "WithValue"
+      ],
+      "features": [],
+      "source": "./src/components/Button/Button.stories.tsx"
+    },
+    {
+      "id": "Data Entry/ButtonGroup",
+      "term": "ButtonGroup",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Custom Buttons"
+      ],
+      "features": [],
+      "source": "./src/components/ButtonGroup/ButtonGroup.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Calendar",
+      "term": "Calendar",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Range"
+      ],
+      "features": [],
+      "source": "./src/components/Calendar/Calendar.stories.tsx"
+    },
+    {
+      "id": "Data Display/Card",
+      "term": "Card",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Vertical"
+      ],
+      "features": [],
+      "source": "./src/components/Card/Card.stories.tsx"
+    },
+    {
+      "id": "Navigation/Carousel",
+      "term": "Carousel",
+      "group": "Navigation",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Carousel/Carousel.stories.tsx"
+    },
+    {
+      "id": "Data Display/Cell",
+      "term": "Cell",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "With Content Textbox Custom"
+      ],
+      "features": [],
+      "source": "./src/components/Cell/Cell.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Checkbox",
+      "term": "Checkbox",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Live"
+      ],
+      "features": [],
+      "source": "./src/components/Checkbox/Checkbox.stories.tsx"
+    },
+    {
+      "id": "Data Display/Chip",
+      "term": "Chip",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Chip/Chip.stories.tsx"
+    },
+    {
+      "id": "Data Display/ChipGroup",
+      "term": "ChipGroup",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Custom Chips"
+      ],
+      "features": [],
+      "source": "./src/components/ChipGroup/ChipGroup.stories.tsx"
+    },
+    {
+      "id": "Data Entry/CodeField",
+      "term": "CodeField",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/CodeField/CodeField.stories.tsx"
+    },
+    {
+      "id": "Data Entry/CodeInput",
+      "term": "CodeInput",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/CodeInput/CodeInput.stories.tsx"
+    },
+    {
+      "id": "Tokens/Colors",
+      "term": "Colors",
+      "group": "Tokens",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Tokens/Colors/Colors.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Combobox",
+      "term": "Combobox",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Single",
+        "Multiple",
+        "SelectAll",
+        "AddItem"
+      ],
+      "features": [],
+      "source": "./src/components/Combobox/Combobox.stories.tsx"
+    },
+    {
+      "id": "Data Display/Counter",
+      "term": "Counter",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Counter/Counter.stories.tsx"
+    },
+    {
+      "id": "_Beta/Data Entry",
+      "term": "Data Entry",
+      "group": "_Beta",
+      "kind": "aggregate",
+      "stories": [],
+      "features": [
+        {
+          "name": "EmbeddedButton",
+          "examples": 1,
+          "source": "./src/components/_beta/EmbeddedButton/EmbeddedButton.stories.tsx"
+        }
+      ],
+      "source": null
+    },
+    {
+      "id": "Data Entry/DatePicker",
+      "term": "DatePicker",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Range"
+      ],
+      "features": [],
+      "source": "./src/components/DatePicker/DatePicker.stories.tsx"
+    },
+    {
+      "id": "Data Entry/DateTimePicker",
+      "term": "DateTimePicker",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/DateTimePicker/DateTimePicker.stories.tsx"
+    },
+    {
+      "id": "Data Display/Divider",
+      "term": "Divider",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Divider/Divider.stories.tsx"
+    },
+    {
+      "id": "Overlay/Drawer",
+      "term": "Drawer",
+      "group": "Overlay",
+      "kind": "component",
+      "stories": [
+        "Drawer Demo"
+      ],
+      "features": [],
+      "source": "./src/components/Drawer/Drawer.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Dropdown",
+      "term": "Dropdown",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Dropdown/Dropdown.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Dropzone",
+      "term": "Dropzone",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Dropzone/Dropzone.stories.tsx"
+    },
+    {
+      "id": "Data Entry/EmbedIconButton",
+      "term": "EmbedIconButton",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/EmbedIconButton/EmbedIconButton.stories.tsx"
+    },
+    {
+      "id": "Data Entry/EmptyState",
+      "term": "EmptyState",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/EmptyState/EmptyState.stories.tsx"
+    },
+    {
+      "id": "Layout/Flow",
+      "term": "Flow",
+      "group": "Layout",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Flow/Flow.stories.tsx"
+    },
+    {
+      "id": "Layout/Grid",
+      "term": "Grid",
+      "group": "Layout",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Custom Cols Position"
+      ],
+      "features": [],
+      "source": "./src/components/Grid/Grid.stories.tsx"
+    },
+    {
+      "id": "Data Entry/IconButton",
+      "term": "IconButton",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/IconButton/IconButton.stories.tsx"
+    },
+    {
+      "id": "Data Display/Image",
+      "term": "Image",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Image/Image.stories.tsx"
+    },
+    {
+      "id": "Data Display/Indicator",
+      "term": "Indicator",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Indicator/Indicator.stories.tsx"
+    },
+    {
+      "id": "Data Display/InformationWrapper",
+      "term": "InformationWrapper",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/InformationWrapper/InformationWrapper.stories.tsx"
+    },
+    {
+      "id": "Navigation/Link",
+      "term": "Link",
+      "group": "Navigation",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Link/Link.stories.tsx"
+    },
+    {
+      "id": "Data Entry/LinkButton",
+      "term": "LinkButton",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/LinkButton/LinkButton.stories.tsx"
+    },
+    {
+      "id": "Data Display/List",
+      "term": "List",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/List/List.stories.tsx"
+    },
+    {
+      "id": "Data Display/Mask",
+      "term": "Mask",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Mask/Mask.stories.tsx"
+    },
+    {
+      "id": "Overlay/Modal",
+      "term": "Modal",
+      "group": "Overlay",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Custom Modal Demo",
+        "Modal Bottom Animation",
+        "Resizable/Draggable"
+      ],
+      "features": [],
+      "source": "./src/components/Modal/Modal.stories.tsx"
+    },
+    {
+      "id": "Data Display/Note",
+      "term": "Note",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Note/Note.stories.tsx"
+    },
+    {
+      "id": "Overlay/Notification",
+      "term": "Notification",
+      "group": "Overlay",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Live Demo",
+        "With Modal"
+      ],
+      "features": [],
+      "source": "./src/components/Notification/Notification.stories.tsx"
+    },
+    {
+      "id": "Data Entry/NumberFormat",
+      "term": "NumberFormat",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/NumberFormat/NumberFormat.stories.tsx"
+    },
+    {
+      "id": "Data Entry/NumberInput",
+      "term": "NumberInput",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "DisplayWithoutValue"
+      ],
+      "features": [],
+      "source": "./src/components/NumberInput/NumberInput.stories.tsx"
+    },
+    {
+      "id": "_Beta/Overlay",
+      "term": "Overlay",
+      "group": "_Beta",
+      "kind": "aggregate",
+      "stories": [],
+      "features": [
+        {
+          "name": "Popover",
+          "examples": 2,
+          "source": "./src/components/_beta/Popover/Popover.stories.tsx"
+        },
+        {
+          "name": "Tooltip",
+          "examples": 1,
+          "source": "./src/components/_beta/Tooltip/Tooltip.stories.tsx"
+        }
+      ],
+      "source": null
+    },
+    {
+      "id": "Overlay/Overlay",
+      "term": "Overlay",
+      "group": "Overlay",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Overlay/Overlay.stories.tsx"
+    },
+    {
+      "id": "Navigation/Pagination",
+      "term": "Pagination",
+      "group": "Navigation",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Pagination/Pagination.stories.tsx"
+    },
+    {
+      "id": "Overlay/Popover",
+      "term": "Popover",
+      "group": "Overlay",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Resizable"
+      ],
+      "features": [],
+      "source": "./src/components/Popover/Popover.stories.tsx"
+    },
+    {
+      "id": "Overlay/Popup",
+      "term": "Popup",
+      "group": "Overlay",
+      "kind": "component",
+      "stories": [
+        "Popup Demo",
+        "Resizable/Draggable"
+      ],
+      "features": [],
+      "source": "./src/components/Popup/Popup.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Portal",
+      "term": "Portal",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Portal/Portal.stories.tsx"
+    },
+    {
+      "id": "Data Display/Price",
+      "term": "Price",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Price/Price.stories.tsx"
+    },
+    {
+      "id": "Overlay/Progress",
+      "term": "Progress",
+      "group": "Overlay",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Progress/Progress.stories.tsx"
+    },
+    {
+      "id": "Overlay/ProgressBarCircular",
+      "term": "ProgressBarCircular",
+      "group": "Overlay",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/ProgressBarCircular/ProgressBarCircular.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Radiobox",
+      "term": "Radiobox",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Live"
+      ],
+      "features": [],
+      "source": "./src/components/Radiobox/Radiobox.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Range",
+      "term": "Range",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Range/Range.stories.tsx"
+    },
+    {
+      "id": "Data Display/Rating",
+      "term": "Rating",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "CustomIcons"
+      ],
+      "features": [],
+      "source": "./src/components/Rating/Rating.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Segment",
+      "term": "Segment",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "IconItem"
+      ],
+      "features": [],
+      "source": "./src/components/Segment/Segment.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Select",
+      "term": "Select",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Single",
+        "Multiselect",
+        "Predefined",
+        "Common",
+        "SelectAll"
+      ],
+      "features": [],
+      "source": "./src/components/Select/Select.stories.tsx"
+    },
+    {
+      "id": "Overlay/Sheet",
+      "term": "Sheet",
+      "group": "Overlay",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Without Overlay",
+        "With Scroll",
+        "With Inside Scroll",
+        "With Double Scroll"
+      ],
+      "features": [],
+      "source": "./src/components/Sheet/Sheet.stories.tsx"
+    },
+    {
+      "id": "Data Display/Skeleton",
+      "term": "Skeleton",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Line",
+        "Text",
+        "Rect",
+        "Button"
+      ],
+      "features": [],
+      "source": "./src/components/Skeleton/Skeleton.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Slider",
+      "term": "Slider",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "MultipleValues"
+      ],
+      "features": [],
+      "source": "./src/components/Slider/Slider.stories.tsx"
+    },
+    {
+      "id": "Tokens/Spacing",
+      "term": "Spacing",
+      "group": "Tokens",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Tokens/NumberTokens/CornerRadius.stories.tsx"
+    },
+    {
+      "id": "Data Display/Spinner",
+      "term": "Spinner",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Live",
+        "Custom Size"
+      ],
+      "features": [],
+      "source": "./src/components/Spinner/Spinner.stories.tsx"
+    },
+    {
+      "id": "Navigation/Steps",
+      "term": "Steps",
+      "group": "Navigation",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Steps/Steps.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Switch",
+      "term": "Switch",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Switch/Switch.stories.tsx"
+    },
+    {
+      "id": "Data Display/Table",
+      "term": "Table",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Complex",
+        "Pagination",
+        "InfiniteLoading"
+      ],
+      "features": [],
+      "source": "./src/components/Table/Table.stories.tsx"
+    },
+    {
+      "id": "Navigation/Tabs",
+      "term": "Tabs",
+      "group": "Navigation",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Header Tabs"
+      ],
+      "features": [],
+      "source": "./src/components/Tabs/Tabs.stories.tsx"
+    },
+    {
+      "id": "Data Entry/TextArea",
+      "term": "TextArea",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/TextArea/TextArea.stories.tsx"
+    },
+    {
+      "id": "Data Entry/TextField",
+      "term": "TextField",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Chips"
+      ],
+      "features": [],
+      "source": "./src/components/TextField/TextField.stories.tsx"
+    },
+    {
+      "id": "Data Entry/TextFieldGroup",
+      "term": "TextFieldGroup",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Custom Text Fields"
+      ],
+      "features": [],
+      "source": "./src/components/TextFieldGroup/TextFieldGroup.stories.tsx"
+    },
+    {
+      "id": "Data Entry/TimePicker",
+      "term": "TimePicker",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/TimePicker/TimePicker.stories.tsx"
+    },
+    {
+      "id": "Overlay/Toast",
+      "term": "Toast",
+      "group": "Overlay",
+      "kind": "component",
+      "stories": [
+        "Toast Component",
+        "Live Demo"
+      ],
+      "features": [],
+      "source": "./src/components/Toast/Toast.stories.tsx"
+    },
+    {
+      "id": "Overlay/Toolbar",
+      "term": "Toolbar",
+      "group": "Overlay",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Toolbar/Toolbar.stories.tsx"
+    },
+    {
+      "id": "Overlay/Tooltip",
+      "term": "Tooltip",
+      "group": "Overlay",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "Live"
+      ],
+      "features": [],
+      "source": "./src/components/Tooltip/Tooltip.stories.tsx"
+    },
+    {
+      "id": "Navigation/Tour",
+      "term": "Tour",
+      "group": "Navigation",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "CustomHighlight"
+      ],
+      "features": [],
+      "source": "./src/components/Tour/Tour.stories.tsx"
+    },
+    {
+      "id": "Data Entry/Tree",
+      "term": "Tree",
+      "group": "Data Entry",
+      "kind": "component",
+      "stories": [
+        "Default",
+        "DragAndDrop",
+        "AsyncLoading"
+      ],
+      "features": [],
+      "source": "./src/components/Tree/Tree.stories.tsx"
+    },
+    {
+      "id": "Tokens/Typography",
+      "term": "Typography",
+      "group": "Tokens",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/Tokens/Typography/Typography.stories.tsx"
+    },
+    {
+      "id": "Data Display/Typography",
+      "term": "Typography",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Dspl",
+        "H",
+        "Body",
+        "Text"
+      ],
+      "features": [],
+      "source": "./src/components/Typography/Typography.stories.tsx"
+    },
+    {
+      "id": "Data Display/ViewContainer",
+      "term": "ViewContainer",
+      "group": "Data Display",
+      "kind": "component",
+      "stories": [
+        "Default"
+      ],
+      "features": [],
+      "source": "./src/components/ViewContainer/ViewContainer.stories.tsx"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "components": {
+    "Локальные компоненты/AiAgentPopover": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Композиции/AnalyticalWidget": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/ApprovalCenter": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/Autocomplete": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/AutocompleteSearch": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/BlockGradientScroll": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Композиции/BlockTitle": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/Box": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/Collapse": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Композиции/Container": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/DrawerDF": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Композиции/EmptyState": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Композиции/FiltersActions": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/GridDND": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Композиции/Layout": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Композиции/LeftPanel": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/MassActions": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/ModalDF": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/ModalDFConfirmation": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/Notification": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/NumberFormatAmount": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Композиции/PageLayout": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Композиции/PageTitle": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/PopoverDF": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/PopupDF": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Композиции/SplitView": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/Stories": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/Switch": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/Table": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/TableCanvas": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/TableContract": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/TableTabs": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/TextArea": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/TextField": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/TextFieldSearch": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/TooltipList": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/TourWidget": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/Typography": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Локальные компоненты/TypographyWithAutoTooltip": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    },
+    "Композиции/Widget": {
+      "summary": "",
+      "whenToUse": "",
+      "aliasesPixso": []
+    }
+  }
+}

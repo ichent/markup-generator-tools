@@ -1,0 +1,963 @@
+{
+  "items": [
+    {
+      "id": "Локальные компоненты/AiAgentPopover/API",
+      "term": "API",
+      "group": "Локальные компоненты/AiAgentPopover",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/AiAgentPopover/AiAgentPopoverAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/ApprovalCenter/API",
+      "term": "API",
+      "group": "Локальные компоненты/ApprovalCenter",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/ApprovalCenter/ApprovalCenterAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/AutocompleteSearch/API",
+      "term": "API",
+      "group": "Локальные компоненты/AutocompleteSearch",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/AutoCompleteSearch/AutoCompleteSearchAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Autocomplete/API",
+      "term": "API",
+      "group": "Локальные компоненты/Autocomplete",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Autocomplete/AutocompleteAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/BlockGradientScroll/API",
+      "term": "API",
+      "group": "Локальные компоненты/BlockGradientScroll",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/BlockGradientScroll/BlockGradientScrollAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Box/API",
+      "term": "API",
+      "group": "Локальные компоненты/Box",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Box/BoxAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Collapse/API",
+      "term": "API",
+      "group": "Локальные компоненты/Collapse",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Collapse/CollapseAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/DrawerDF/API",
+      "term": "API",
+      "group": "Локальные компоненты/DrawerDF",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/DrawerDF/DrawerDFAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/GridDND/API",
+      "term": "API",
+      "group": "Локальные компоненты/GridDND",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/GridDND/GridDNDAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/MassActions/API",
+      "term": "API",
+      "group": "Локальные компоненты/MassActions",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/MassActions/MassActionsAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/ModalDF/API",
+      "term": "API",
+      "group": "Локальные компоненты/ModalDF",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/ModalDF/ModalDFAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/ModalDFConfirmation/API",
+      "term": "API",
+      "group": "Локальные компоненты/ModalDFConfirmation",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/ModalDFConfirmation/ModalDFConfirmationAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Notification/API",
+      "term": "API",
+      "group": "Локальные компоненты/Notification",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Notification/NotificationAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/NumberFormatAmount/API",
+      "term": "API",
+      "group": "Локальные компоненты/NumberFormatAmount",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/NumberFormatAmount/NumberFormatAmountAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/PopoverDF/API",
+      "term": "API",
+      "group": "Локальные компоненты/PopoverDF",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/PopoverDF/PopoverDF.API.mdx"
+    },
+    {
+      "id": "Локальные компоненты/PopupDF/API",
+      "term": "API",
+      "group": "Локальные компоненты/PopupDF",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/PopupDF/PopupDF.API.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Stories/API",
+      "term": "API",
+      "group": "Локальные компоненты/Stories",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Stories/StoriesAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Switch/API",
+      "term": "API",
+      "group": "Локальные компоненты/Switch",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Switch/SwitchAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/API/Table.API.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/Collapsing/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/Collapsing",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.collapsing/Table.collapsingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/ColumnResizing/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/ColumnResizing",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.columnResizing/Table.columnResizingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/ColumnsControl/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/ColumnsControl",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.columnsControl/Table.columnsControlAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/ColumnsGrouping/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/ColumnsGrouping",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.columnsGrouping/Table.columnsGroupingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/ContextMenu/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/ContextMenu",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.contextMenu/Table.contextMenuAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/Contract/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/Contract",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.contract/Table.contractAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/ControlBlock/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/ControlBlock",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.controlBlock/Table.controlBlockAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/ControlBlock/MassPanelAction/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/ControlBlock/MassPanelAction",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.controlBlock/Table.massPanelActionAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/CustomRender/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/CustomRender",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.customRender/Table.customRenderAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/DomMetadata/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/DomMetadata",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.domMetadata/Table.domMetadataAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/Editing/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/Editing",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.editing/Table.editingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/Filtering/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/Filtering",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.filtering/Table.filteringAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/FormatCellContent/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/FormatCellContent",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.formatCellContent/Table.formatCellContentAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/FullScreenMode/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/FullScreenMode",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.fullScreenMode/Table.fullScreenModeAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/HighlightActiveType/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/HighlightActiveType",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.highlightActiveType/Table.highlightActiveTypeAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/InfinityScroll/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/InfinityScroll",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.infinityScroll/Table.infinityScrollAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/IsLoading/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/IsLoading",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.isLoading/Table.isLoadingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/KeyText/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/KeyText",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.keyText/Table.keyTextAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/NoRowsFallback/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/NoRowsFallback",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.noRowsFallback/Table.noRowsFallbackAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/Pagination/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/Pagination",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.pagination/Table.paginationAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/RowDetailPanel/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/RowDetailPanel",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.rowDetailPanel/Table.rowDetailPanelAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/RowHeight/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/RowHeight",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.rowHeight/Table.rowHeightAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/RowInstruments/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/RowInstruments",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.rowInstruments/Table.rowInstrumentsAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/RowSize/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/RowSize",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.rowSize/Table.rowSizeAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/RowsGrouping/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/RowsGrouping",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.rowsGrouping/Table.rowsGroupingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/Searching/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/Searching",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.searching/Table.searchingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/SelectingRow/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/SelectingRow",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.selecting/Table.selectingRowAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/Sidebar/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/Sidebar",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.sidebar/Table.sidebarAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/Simple/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/Simple",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.simple/Table.simpleAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/Sorting/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/Sorting",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.sorting/Table.sortingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/SubRows/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/SubRows",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.subRows/Table.subRowsAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/SummaryRows/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/SummaryRows",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.summaryRows/Table.summaryRowsAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table/Virtualization/API",
+      "term": "API",
+      "group": "Локальные компоненты/Table/Virtualization",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.virtualization/Table.virtualizationAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/CanvasElements/CanvasBadge/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/CanvasElements/CanvasBadge",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasBadge/CanvasBadgeAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/CanvasElements/CanvasButton/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/CanvasElements/CanvasButton",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasButton/CanvasButtonAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/CanvasElements/CanvasCheckbox/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/CanvasElements/CanvasCheckbox",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasCheckbox/CanvasCheckboxAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/CanvasElements/CanvasContainer/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/CanvasElements/CanvasContainer",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasContainer/CanvasContainerAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/CanvasElements/CanvasEmbedIconButton/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/CanvasElements/CanvasEmbedIconButton",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasEmbedIconButton/CanvasEmbedIconButtonAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/CanvasElements/CanvasIcon/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/CanvasElements/CanvasIcon",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasIcon/CanvasIconAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/CanvasElements/CanvasIconButton/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/CanvasElements/CanvasIconButton",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasIconButton/CanvasIconButtonAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/CanvasElements/CanvasLink/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/CanvasElements/CanvasLink",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasLink/CanvasLinkAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/CanvasElements/CanvasSkeleton/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/CanvasElements/CanvasSkeleton",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasSkeleton/CanvasSkeletonAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/CanvasElements/CanvasText/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/CanvasElements/CanvasText",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasText/CanvasTextAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Cell Preview/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Cell Preview",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.CellPreview/TableCanvas.cellPreviewAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/CellsSelection/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/CellsSelection",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.CellsSelection/TableCanvas.cellsSelectionAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Collapsing/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Collapsing",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Collapsing/TableCanvas.collapsingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/ColumnsControl/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/ColumnsControl",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ColumnsControl/TableCanvas.columnsControlAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/ColumnsGrouping/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/ColumnsGrouping",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ColumnsGrouping/TableCanvas.columnsGroupingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/ContextMenu/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/ContextMenu",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ContextMenu/TableCanvasContextMenuAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/ControlBlock/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/ControlBlock",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ControlBlock/TableCanvas.controlBlockAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/ControlBlock/APE/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/ControlBlock/APE",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ControlBlock/TableCanvas.controlBlockApe/TableCanvas.controlBlockApeAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/ControlBlock/MassPanelAction/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/ControlBlock/MassPanelAction",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ControlBlock/TableCanvas.massPanelAction/TableCanvas.massPanelActionAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/ControlBlock/SplitIconButton/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/ControlBlock/SplitIconButton",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ControlBlock/TableCanvas.splitIconButtonAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Copy-Paste-Fill/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Copy-Paste-Fill",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.CopyPasteFill/TableCanvas.CopyPasteFillAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Custom renders/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Custom renders",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.CustomRender/TableCanvas.customRenderAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/DomMetadata/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/DomMetadata",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.DomMetadata/TableCanvas.domMetadataAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Editing/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Editing",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Editing/TableCanvas.editingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/EmptyState/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/EmptyState",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.EmptyState/Table.emptyState.api.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/ErrorState/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/ErrorState",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ErrorState/TableCanvas.errorState.api.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Filtering/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Filtering",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Filtering/TableCanvas.filteringAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/FormatCellContent/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/FormatCellContent",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.FormatCellContent/TableCanvas.formatCellContentAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/FullScreenMode/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/FullScreenMode",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.FullScreenMode/TableCanvas.fullScreenModeAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/HighlightActiveType/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/HighlightActiveType",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.HighlightActiveType/TableCanvas.highlightActiveTypeAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/HoverEffects/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/HoverEffects",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.HoverEffects/TableCanvas.hoverEffectsAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/InfinityScroll/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/InfinityScroll",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.InfinityScroll/TableCanvasInfinityScrollAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/IsLoading/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/IsLoading",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.IsLoading/TableCanvas.isLoadingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/KeyText/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/KeyText",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.KeyText/TableCanvas.keyTextAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Notifications/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Notifications",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Notifications/TableCanvas.notificationsAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Pagination/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Pagination",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Pagination/Table.paginationAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/RowHeight/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/RowHeight",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.RowHeight/TableCanvas.rowHeightAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/RowMarkers/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/RowMarkers",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.RowMarkers/TableCanvas.rowMarkersAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/RowsGrouping/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/RowsGrouping",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.RowsGrouping/TableCanvas.rowsGroupingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Searching/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Searching",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Searching/TableCanvas.searchingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/SelectingRow/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/SelectingRow",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Selecting/TableCanvas.selectingRowAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Sidebar/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Sidebar",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Sidebar/Table.sidebarAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Sorting/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Sorting",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Sorting/TableCanvas.sortingAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/SubRows/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/SubRows",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.SubRows/TableCanvas.subRowsAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/SummaryRows/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/SummaryRows",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.SummaryRows/TableCanvas.summaryRowsAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Theme Override/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Theme Override",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.ThemeOverride/TableCanvas.themeOverrideAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/Tooltip/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/Tooltip",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Tooltip/TableCanvas.TooltipAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/UnstickyHeader/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableCanvas/UnstickyHeader",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.UnstickyHeader/TableCanvas.unstickyHeaderAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableTabs/API",
+      "term": "API",
+      "group": "Локальные компоненты/TableTabs",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableTabs/TableTabsAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TextArea/API",
+      "term": "API",
+      "group": "Локальные компоненты/TextArea",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TextArea/TextAreaAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TextField/API",
+      "term": "API",
+      "group": "Локальные компоненты/TextField",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TextField/TextFieldAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TextFieldSearch/API",
+      "term": "API",
+      "group": "Локальные компоненты/TextFieldSearch",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TextFieldSearch/TextFieldSearchAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TooltipList/API",
+      "term": "API",
+      "group": "Локальные компоненты/TooltipList",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TooltipList/TooltipListAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TourWidget/API",
+      "term": "API",
+      "group": "Локальные компоненты/TourWidget",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TourWidget/TourWidgetAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Typography/API",
+      "term": "API",
+      "group": "Локальные компоненты/Typography",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Typography/TypographyAPI.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TypographyWithAutoTooltip/API",
+      "term": "API",
+      "group": "Локальные компоненты/TypographyWithAutoTooltip",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TypographyWithTooltip/TypographyWithAutoTooltipAPI.mdx"
+    },
+    {
+      "id": "Композиции/AnalyticalWidget/API",
+      "term": "API",
+      "group": "Композиции/AnalyticalWidget",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/AnalyticalWidget/AnalyticalWidgetAPI.mdx"
+    },
+    {
+      "id": "Композиции/BlockTitle/API",
+      "term": "API",
+      "group": "Композиции/BlockTitle",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/BlockTitle/BlockTitleAPI.mdx"
+    },
+    {
+      "id": "Композиции/Container/API",
+      "term": "API",
+      "group": "Композиции/Container",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Container/ContainerAPI.mdx"
+    },
+    {
+      "id": "Композиции/EmptyState/API",
+      "term": "API",
+      "group": "Композиции/EmptyState",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/EmptyState/EmptyStateAPI.mdx"
+    },
+    {
+      "id": "Композиции/ErrorPage-Страницы ошибок/API",
+      "term": "API",
+      "group": "Композиции/ErrorPage-Страницы ошибок",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/ErrorPage/ErrorPageAPI.mdx"
+    },
+    {
+      "id": "Композиции/FiltersActions/API",
+      "term": "API",
+      "group": "Композиции/FiltersActions",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/FiltersActions/FilterActionsAPI.mdx"
+    },
+    {
+      "id": "Композиции/Layout/API",
+      "term": "API",
+      "group": "Композиции/Layout",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Layout/LayoutAPI.mdx"
+    },
+    {
+      "id": "Композиции/LeftPanel/API",
+      "term": "API",
+      "group": "Композиции/LeftPanel",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/LeftPanel/LeftPanelAPI.mdx"
+    },
+    {
+      "id": "Композиции/PageLayout/API",
+      "term": "API",
+      "group": "Композиции/PageLayout",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/PageLayout/PageLayoutAPI.mdx"
+    },
+    {
+      "id": "Композиции/PageTitle/API",
+      "term": "API",
+      "group": "Композиции/PageTitle",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/PageTitle/PageTitleAPI.mdx"
+    },
+    {
+      "id": "Композиции/SplitView/API",
+      "term": "API",
+      "group": "Композиции/SplitView",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/SplitView/SplitViewAPI.mdx"
+    },
+    {
+      "id": "Композиции/Widget/API",
+      "term": "API",
+      "group": "Композиции/Widget",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Widget/WidgetAPI.mdx"
+    },
+    {
+      "id": "Формы/Компоненты формы/API",
+      "term": "API",
+      "group": "Формы/Компоненты формы",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/FormComponents/FormComponentsAPI.mdx"
+    },
+    {
+      "id": "Utils/breakpoint/API",
+      "term": "API",
+      "group": "Utils/breakpoint",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Utils/breakpoint/breakpoint.api.mdx"
+    },
+    {
+      "id": "Changelog",
+      "term": "Changelog",
+      "group": "",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Changelog/Changelog.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/API/columnConfig",
+      "term": "columnConfig",
+      "group": "Локальные компоненты/TableCanvas/API",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/API/TableCanvas.columnConfig.stories.tsx"
+    },
+    {
+      "id": "DAIS",
+      "term": "DAIS",
+      "group": "",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/AiChatDAIS/AiChatDAIS.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/CanvasElements/Docs",
+      "term": "Docs",
+      "group": "Локальные компоненты/TableCanvas/CanvasElements",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/CanvasElements/CanvasElements.Docs.mdx"
+    },
+    {
+      "id": "Utils/breakpoint/Docs",
+      "term": "Docs",
+      "group": "Utils/breakpoint",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Utils/breakpoint/breakpoint.docs.mdx"
+    },
+    {
+      "id": "Utils/getValueToken",
+      "term": "getValueToken",
+      "group": "Utils",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Utils/getTokenValue.mdx"
+    },
+    {
+      "id": "Images/Icons",
+      "term": "Icons",
+      "group": "Images",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Icons/icons.mdx"
+    },
+    {
+      "id": "Images/IconSvgSprite",
+      "term": "IconSvgSprite",
+      "group": "Images",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/IconSvgSprite/iconSvgSprite.mdx"
+    },
+    {
+      "id": "Локальные компоненты/Table",
+      "term": "Table",
+      "group": "Локальные компоненты",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/Table/Table.Docs.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/API/Table",
+      "term": "Table",
+      "group": "Локальные компоненты/TableCanvas/API",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/API/TableCanvas.table.stories.tsx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas",
+      "term": "TableCanvas",
+      "group": "Локальные компоненты",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/TableCanvas.Docs.mdx"
+    },
+    {
+      "id": "Локальные компоненты/TableCanvas/API/tableConfig",
+      "term": "tableConfig",
+      "group": "Локальные компоненты/TableCanvas/API",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/TableCanvas/API/TableCanvas.tableConfig.stories.tsx"
+    },
+    {
+      "id": "SDDS/Материалы",
+      "term": "Материалы",
+      "group": "SDDS",
+      "stories": [],
+      "source": "./packages/storybook/src/stories/SDDS/sdds.mdx"
+    },
+    {
+      "id": "Полезные ссылки",
+      "term": "Полезные ссылки",
+      "group": "",
+      "stories": [],
+      "source": "./packages/storybook/src/storybook-intro/links.mdx"
+    },
+    {
+      "id": "Установка и использование",
+      "term": "Установка и использование",
+      "group": "",
+      "stories": [],
+      "source": "./packages/storybook/src/storybook-intro/intro.mdx"
+    }
+  ]
+}
