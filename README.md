@@ -159,3 +159,7 @@ npm run generate
 
 - Node.js (ESM, без npm-зависимостей пайплайна)
 - Два `index.json` сторибука в `data/`
+
+## См. также
+
+- [RFC: манифест компонентов для codegen и MCP](docs/RFC-codegen-manifest.md) — что попросить у команд UI-KIT улучшить вместо сырого `index.json`
