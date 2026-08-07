@@ -3,52 +3,29 @@
 /**
  * UIKIT-MCP — единый MCP-сервер для обоих UI-KIT репозиториев.
  *
- * Принимает пути к обоим репозиториям при старте:
  *   node server.mjs <df-path> <finai-path>
+ *   UIKIT_DF_ROOT=… UIKIT_FINAI_ROOT=… node server.mjs
  *
- * Или через env:
- *   UIKIT_DF_ROOT=<path> UIKIT_FINAI_ROOT=<path> node server.mjs
- *
- * Инструменты:
- *   search_components  — ищет по обоим реестрам с пометкой источника
- *   get_component      — возвращает карточку с указанием df/finai
- *   get_examples       — читает stories из нужного репозитория
- *   list_components    — перечисляет с группировкой по источнику
+ * Важно: handshake (initialize) отвечает сразу; реестры строятся лениво
+ * при первом tools/call — иначе Cursor даёт -32001 request timed out.
  */
 
 import { readFileSync, readdirSync, statSync } from 'fs';
 import { join } from 'path';
 
-// ── paths ──────────────────────────────────────────────────────────────────
+const DF_ROOT = process.argv[2] ?? process.env.UIKIT_DF_ROOT ?? null;
+const FINAI_ROOT = process.argv[3] ?? process.env.UIKIT_FINAI_ROOT ?? null;
 
-const DF_ROOT = process.argv[2] ?? process.env.UIKIT_DF_ROOT;
-const FINAI_ROOT = process.argv[3] ?? process.env.UIKIT_FINAI_ROOT;
-
-if (!DF_ROOT || !FINAI_ROOT) {
-  console.error('');
-  console.error('  Usage: UIKIT-MCP <path-to-digital_finance_ui> <path-to-sdds-finai>');
-  console.error('');
-  console.error('  or via env:');
-  console.error('    UIKIT_DF_ROOT=/path/to/df UIKIT_FINAI_ROOT=/path/to/finai node server.mjs');
-  console.error('');
-  process.exit(1);
-}
-
-const DF_STORYBOOK = join(DF_ROOT, 'packages/storybook');
-const FINAI_COMPONENTS = join(FINAI_ROOT, 'src', 'components');
-
-// ── helpers ─────────────────────────────────────────────────────────────────
+const DF_STORYBOOK = DF_ROOT ? join(DF_ROOT, 'packages/storybook') : null;
+const FINAI_COMPONENTS = FINAI_ROOT ? join(FINAI_ROOT, 'src', 'components') : null;
 
 function walk(dir, filter = () => true) {
   let results = [];
   try {
     for (const entry of readdirSync(dir, { withFileTypes: true })) {
       const full = join(dir, entry.name);
-      if (entry.isDirectory()) {
-        results = results.concat(walk(full, filter));
-      } else if (filter(entry.name)) {
-        results.push(full);
-      }
+      if (entry.isDirectory()) results = results.concat(walk(full, filter));
+      else if (filter(entry.name)) results.push(full);
     }
   } catch { /* skip */ }
   return results;
@@ -62,18 +39,14 @@ function statSafe(path) {
   try { return statSync(path); } catch { return null; }
 }
 
-// ── registry builders ──────────────────────────────────────────────────────
-
 function buildDFRegistry() {
-  if (!statSafe(DF_STORYBOOK)?.isDirectory()) return [];
-
+  if (!DF_STORYBOOK || !statSafe(DF_STORYBOOK)?.isDirectory()) return [];
   const storiesStories = join(DF_STORYBOOK, 'src', 'stories');
   if (!statSafe(storiesStories)?.isDirectory()) return [];
 
-  const dirs = readdirSync(storiesStories).filter((d) => {
-    const p = join(storiesStories, d);
-    return statSafe(p)?.isDirectory();
-  });
+  const dirs = readdirSync(storiesStories).filter((d) =>
+    statSafe(join(storiesStories, d))?.isDirectory(),
+  );
 
   return dirs.map((dir) => {
     const storyDir = join(storiesStories, dir);
@@ -81,24 +54,28 @@ function buildDFRegistry() {
     const content = readSafe(mdxPath);
     if (!content || !content.includes('import { Meta, Stories }')) return null;
 
-    const storiesFiles = walk(storyDir, (n) => n.endsWith('.stories.tsx') || n.endsWith('.stories.ts'));
+    const storiesFiles = walk(storyDir, (n) =>
+      n.endsWith('.stories.tsx') || n.endsWith('.stories.ts'),
+    );
 
     const titleMatch = content.match(/^# (\S+)/m);
     const descMatch = content.match(/^# \S+\n\n([^\n]+(?:\n[^\n]+)*?)(?=##|$)/m);
-
     const exampleNames = [];
-    const category = '';
+
     for (const sf of storiesFiles) {
       const sc = readSafe(sf);
-      if (sc) {
-        exampleNames.push(...[...sc.matchAll(/export const (\w+):/g)].map((m) => m[1]));
-        const catM = sc.match(/title: ['"]([^'"]+)\/([^'"]+)['"]/);
-        if (catM) return {
+      if (!sc) continue;
+      exampleNames.push(...[...sc.matchAll(/export const (\w+):/g)].map((m) => m[1]));
+      const catM = sc.match(/title: ['"]([^'"]+)\/([^'"]+)['"]/);
+      if (catM) {
+        return {
           source: 'df',
           name: dir,
           title: catM[2],
           category: catM[1],
-          description: descMatch ? descMatch[1].replace(/^> /gm, '').replace(/\n{2,}/g, '\n').trim() : '',
+          description: descMatch
+            ? descMatch[1].replace(/^> /gm, '').replace(/\n{2,}/g, '\n').trim()
+            : '',
           examples: [...new Set(exampleNames)].slice(0, 10),
         };
       }
@@ -109,14 +86,16 @@ function buildDFRegistry() {
       name: dir,
       title: titleMatch?.[1] || dir,
       category: '',
-      description: descMatch ? descMatch[1].replace(/^> /gm, '').replace(/\n{2,}/g, '\n').trim() : '',
+      description: descMatch
+        ? descMatch[1].replace(/^> /gm, '').replace(/\n{2,}/g, '\n').trim()
+        : '',
       examples: [...new Set(exampleNames)].slice(0, 10),
     };
   }).filter(Boolean);
 }
 
 function buildFINAIRegistry() {
-  if (!statSafe(FINAI_COMPONENTS)?.isDirectory()) return [];
+  if (!FINAI_COMPONENTS || !statSafe(FINAI_COMPONENTS)?.isDirectory()) return [];
 
   const dirs = readdirSync(FINAI_COMPONENTS).filter((d) => {
     const p = join(FINAI_COMPONENTS, d);
@@ -126,7 +105,7 @@ function buildFINAIRegistry() {
   return dirs.map((dir) => {
     const compDir = join(FINAI_COMPONENTS, dir);
     const storiesFile = readdirSync(compDir).find(
-      (f) => (f.endsWith('.stories.tsx') || f.endsWith('.stories.ts'))
+      (f) => f.endsWith('.stories.tsx') || f.endsWith('.stories.ts'),
     );
 
     if (!storiesFile) {
@@ -139,7 +118,6 @@ function buildFINAIRegistry() {
     }
 
     const titleMatch = code.match(/title: ['"]([^'"]+)\/([^'"]+)['"]/);
-
     return {
       source: 'finai',
       name: dir,
@@ -151,26 +129,232 @@ function buildFINAIRegistry() {
   }).filter((c) => c.examples.length > 0 || c.title);
 }
 
-// ── registries ─────────────────────────────────────────────────────────────
+// Ленивая загрузка — не блокируем initialize
+let dfRegistry = null;
+let finaiRegistry = null;
 
-const dfRegistry = buildDFRegistry();
-const finaiRegistry = buildFINAIRegistry();
-
-console.error(`[UIKIT-MCP] Loaded ${dfRegistry.length} DF components, ${finaiRegistry.length} FINAI components`);
-
-// ── MCP server ─────────────────────────────────────────────────────────────
-
-function send(stdout, msg) {
-  stdout.write(JSON.stringify(msg) + '\n');
+function ensureRegistries() {
+  if (dfRegistry && finaiRegistry) return;
+  const t0 = Date.now();
+  dfRegistry = buildDFRegistry();
+  finaiRegistry = buildFINAIRegistry();
+  console.error(
+    `[UIKIT-MCP] Loaded ${dfRegistry.length} DF, ${finaiRegistry.length} FINAI ` +
+      `(${Date.now() - t0}ms). DF_ROOT=${DF_ROOT ?? '—'} FINAI_ROOT=${FINAI_ROOT ?? '—'}`,
+  );
 }
 
+function send(msg) {
+  // JSON-RPC: либо result, либо error — не оба и не error:null
+  process.stdout.write(JSON.stringify(msg) + '\n');
+}
+
+function ok(id, result) {
+  send({ jsonrpc: '2.0', id, result });
+}
+
+function fail(id, code, message) {
+  send({ jsonrpc: '2.0', id, error: { code, message } });
+}
+
+function textResult(text) {
+  return { content: [{ type: 'text', text }] };
+}
+
+function handleToolsCall(args) {
+  ensureRegistries();
+
+  const name = args?.name;
+  const query = (args?.arguments?.query || '').toLowerCase();
+  const limit = args?.arguments?.limit ?? 8;
+  const sourceFilter = args?.arguments?.source ?? 'all';
+  const toolArgs = args?.arguments ?? {};
+
+  if (!DF_ROOT && !FINAI_ROOT) {
+    return textResult(
+      'UIKIT-MCP: не заданы пути к репозиториям. Укажи в mcp.json args или env UIKIT_DF_ROOT / UIKIT_FINAI_ROOT.',
+    );
+  }
+
+  switch (name) {
+    case 'search_components': {
+      const all = [...dfRegistry, ...finaiRegistry];
+      const scored = all
+        .filter((c) => {
+          if (sourceFilter !== 'all' && c.source !== sourceFilter) return false;
+          const n = c.name.toLowerCase();
+          return n.includes(query) || (c.description || '').toLowerCase().includes(query);
+        })
+        .map((c) => {
+          let score = 0;
+          const n = c.name.toLowerCase();
+          if (n.includes(query)) score += 10;
+          if ((c.description || '').toLowerCase().includes(query)) score += 5;
+          return { ...c, score };
+        })
+        .filter((c) => c.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, limit);
+
+      return textResult(
+        scored.length
+          ? scored
+              .map((c, i) => {
+                const cat = c.category ? ` [${c.category}]` : '';
+                return `${i + 1}. ${c.name} (${c.source})${cat} — ${(c.description || '').substring(0, 100)}`;
+              })
+              .join('\n')
+          : `Ничего не найдено по «${toolArgs.query}»`,
+      );
+    }
+
+    case 'get_component': {
+      const compName = toolArgs.name?.trim();
+      const explicitSource = toolArgs.source ?? 'auto';
+      let comp = null;
+
+      if (explicitSource === 'auto') {
+        comp = dfRegistry.find((c) => c.name.toLowerCase() === compName?.toLowerCase())
+          ?? finaiRegistry.find((c) => c.name.toLowerCase() === compName?.toLowerCase());
+      } else {
+        const reg = explicitSource === 'df' ? dfRegistry : finaiRegistry;
+        comp = reg.find((c) => c.name.toLowerCase() === compName?.toLowerCase());
+      }
+
+      if (!comp) return textResult(`Компонент «${compName}» не найден.`);
+
+      return textResult(
+        `# ${comp.name}  (${comp.source})\n` +
+          `Категория: ${comp.category || 'Без категории'}\n` +
+          `Что это: ${comp.description || 'Без описания'}\n\n` +
+          `Примеры (stories): ${comp.examples.join(', ') || '—'}\n\n` +
+          `Чтобы увидеть КОД — вызови get_examples("${comp.name}") с source="${comp.source}"`,
+      );
+    }
+
+    case 'get_examples': {
+      const compName = toolArgs.name?.trim();
+      const forceSource = toolArgs.source;
+      let comp = dfRegistry.find((c) => c.name.toLowerCase() === compName?.toLowerCase());
+      let src = 'df';
+      if (!comp) {
+        comp = finaiRegistry.find((c) => c.name.toLowerCase() === compName?.toLowerCase());
+        src = 'finai';
+      }
+      if (forceSource) {
+        const reg = forceSource === 'df' ? dfRegistry : finaiRegistry;
+        comp = reg.find((c) => c.name.toLowerCase() === compName?.toLowerCase());
+        src = forceSource;
+      }
+      if (!comp) return textResult(`Нет примеров для «${compName}»`);
+
+      let code = null;
+      if (src === 'df' && DF_STORYBOOK) {
+        const storyDir = join(DF_STORYBOOK, 'src', 'stories', comp.name);
+        if (statSafe(storyDir)?.isDirectory()) {
+          const storiesFiles = walk(storyDir, (n) =>
+            n.endsWith('.stories.tsx') || n.endsWith('.stories.ts'),
+          );
+          if (storiesFiles.length) code = readSafe(storiesFiles[0]);
+        }
+      } else if (FINAI_COMPONENTS) {
+        const compDir = join(FINAI_COMPONENTS, comp.name);
+        if (statSafe(compDir)?.isDirectory()) {
+          const storiesFile = readdirSync(compDir).find(
+            (f) => f.endsWith('.stories.tsx') || f.endsWith('.stories.ts'),
+          );
+          if (storiesFile) code = readSafe(join(compDir, storiesFile));
+        }
+      }
+
+      if (!code) return textResult(`Не удалось прочитать stories для «${compName}» (${src})`);
+      return textResult(`// === ${src.toUpperCase()} UI-KIT: ${compName}\n\n${code}`);
+    }
+
+    case 'list_components': {
+      const listSource = toolArgs.source ?? 'all';
+      const listCategory = toolArgs.category;
+      const parts = [];
+
+      if (listSource === 'all' || listSource === 'df') {
+        let items = [...dfRegistry];
+        if (listCategory) items = items.filter((c) => c.category === listCategory);
+        if (items.length) {
+          parts.push(`## DF UI-KIT (${items.length} шт.)\n${items.map((c, i) => `${i + 1}. ${c.name}`).join('\n')}`);
+        }
+      }
+      if (listSource === 'all' || listSource === 'finai') {
+        const items = [...finaiRegistry];
+        if (items.length) {
+          parts.push(`## FINAI UI-KIT (${items.length} шт.)\n${items.map((c, i) => `${i + 1}. ${c.name}`).join('\n')}`);
+        }
+      }
+      return textResult(parts.join('\n\n') || 'Ничего не найдено');
+    }
+
+    default:
+      throw Object.assign(new Error(`Unknown tool: ${name}`), { code: -32601 });
+  }
+}
+
+const TOOLS = [
+  {
+    name: 'search_components',
+    description: 'Ищет компоненты UI-KIT (DF + FINAI) по имени/описанию. В результатах — источник df|finai.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        query: { type: 'string', description: 'Имя/алиас/ключевое слово' },
+        limit: { type: 'number', description: 'Сколько результатов (по умолч. 8)' },
+        source: { type: 'string', enum: ['df', 'finai', 'all'], description: 'Фильтр источника' },
+      },
+      required: ['query'],
+    },
+  },
+  {
+    name: 'get_component',
+    description: 'Карточка компонента: описание, категория, примеры. Источник df/finai.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        name: { type: 'string', description: 'Каноническое имя' },
+        source: { type: 'string', enum: ['df', 'finai', 'auto'] },
+      },
+      required: ['name'],
+    },
+  },
+  {
+    name: 'get_examples',
+    description: 'Реальный код stories компонента.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        name: { type: 'string' },
+        source: { type: 'string', enum: ['df', 'finai'] },
+      },
+      required: ['name'],
+    },
+  },
+  {
+    name: 'list_components',
+    description: 'Список компонентов с группировкой по источнику.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        source: { type: 'string', enum: ['df', 'finai', 'all'] },
+        category: { type: 'string', description: 'Фильтр категории (df)' },
+      },
+    },
+  },
+];
+
 async function main() {
-  const stdin = process.stdin;
-  const stdout = process.stdout;
+  console.error(
+    `[UIKIT-MCP] ready (lazy registries). DF_ROOT=${DF_ROOT ?? '—'} FINAI_ROOT=${FINAI_ROOT ?? '—'}`,
+  );
 
   let buffer = '';
-
-  for await (const chunk of stdin) {
+  for await (const chunk of process.stdin) {
     buffer += chunk.toString();
     const lines = buffer.split('\n');
     buffer = lines.pop() || '';
@@ -181,271 +365,37 @@ async function main() {
       try { msg = JSON.parse(line); } catch { continue; }
 
       const { method, params, id } = msg;
-      if (!id) continue;
-
-      let result = null;
-      let error = null;
+      // уведомления без id — игнор (в т.ч. notifications/initialized от клиента)
+      if (id === undefined || id === null) continue;
 
       try {
         switch (method) {
-          case 'initialize': {
-            send(stdout, { jsonrpc: '2.0', id, result: {
+          case 'initialize':
+            ok(id, {
               protocolVersion: '2024-11-05',
-              serverInfo: { name: 'UIKIT-MCP', version: '1.0.0' },
-              capabilities: { tools: { listChanged: true }, resources: { listChanged: true } },
-            }});
-            // notifications/initialized отправляем ПОСЛЕ ответа на initialize
-            send(stdout, { jsonrpc: '2.0', method: 'notifications/initialized' });
-            continue;
-          }
-
-          case 'tools/list': {
-            result = {
-              tools: [
-                {
-                  name: 'search_components',
-                  description: 'Ищет компоненты UI-KIT (DF + FINAI) по имени, описанию или фиче. В результатах указан источник: df или finai.',
-                  inputSchema: {
-                    type: 'object',
-                    properties: {
-                      query: { type: 'string', description: 'Имя/алиас/ключевое слово' },
-                      limit: { type: 'number', description: 'Сколько результатов (по умолч. 8)' },
-                      source: { type: 'string', description: 'Фильтр: "df", "finai" или "all" (по умолч.)', enum: ['df', 'finai', 'all'] },
-                    },
-                    required: ['query'],
-                  },
-                },
-                {
-                  name: 'get_component',
-                  description: 'Возвращает карточку компонента: описание, категорию, примеры. Источник (df/finai) определяется автоматически.',
-                  inputSchema: {
-                    type: 'object',
-                    properties: {
-                      name: { type: 'string', description: 'Каноническое имя компонента' },
-                      source: { type: 'string', description: 'Опционально: "df", "finai" или "auto" (по умолч.)', enum: ['df', 'finai', 'auto'] },
-                    },
-                    required: ['name'],
-                  },
-                },
-                {
-                  name: 'get_examples',
-                  description: 'Возвращает реальный код stories компонента. Источник определяется автоматически по имени.',
-                  inputSchema: {
-                    type: 'object',
-                    properties: {
-                      name: { type: 'string', description: 'Каноническое имя компонента' },
-                      source: { type: 'string', description: 'Опционально: "df" или "finai" для принудительного выбора', enum: ['df', 'finai'] },
-                    },
-                    required: ['name'],
-                  },
-                },
-                {
-                  name: 'list_components',
-                  description: 'Перечисляет компоненты UI-KIT с группировкой по источнику (df / finai).',
-                  inputSchema: {
-                    type: 'object',
-                    properties: {
-                      source: { type: 'string', description: '"df", "finai" или "all" (по умолч.)', enum: ['df', 'finai', 'all'] },
-                      category: { type: 'string', description: 'Фильтр по категории (только для df)' },
-                    },
-                  },
-                },
-              ],
-            };
+              serverInfo: { name: 'UIKIT-MCP', version: '1.0.1' },
+              capabilities: { tools: {} },
+            });
             break;
-          }
 
-          case 'tools/call': {
-            const { name, arguments: args } = params;
-            const query = (args?.query || '').toLowerCase();
-            const limit = args?.limit ?? 8;
-            const sourceFilter = args?.source ?? 'all';
-
-            switch (name) {
-              case 'search_components': {
-                const all = [
-                  ...dfRegistry.map((c) => ({ ...c, score: 0 })),
-                  ...finaiRegistry.map((c) => ({ ...c, score: 0 })),
-                ];
-
-                const scored = all
-                  .filter((c) => {
-                    // filter by source
-                    if (sourceFilter !== 'all' && c.source !== sourceFilter) return false;
-                    const n = c.name.toLowerCase();
-                    return n.includes(query) || c.description.toLowerCase().includes(query);
-                  })
-                  .map((c) => {
-                    const n = c.name.toLowerCase();
-                    if (n.includes(query)) c.score += 10;
-                    if (c.description?.toLowerCase().includes(query)) c.score += 5;
-                    return c;
-                  })
-                  .filter((c) => c.score > 0)
-                  .sort((a, b) => b.score - a.score)
-                  .slice(0, limit);
-
-                result = {
-                  content: [{
-                    type: 'text',
-                    text: scored.length > 0
-                      ? scored.map((c, i) => {
-                          const src = c.source === 'df' ? 'df' : 'finai';
-                          const cat = c.category ? ` [${c.category}]` : '';
-                          return `${i + 1}. ${c.name} (${src})${cat} — ${c.description?.substring(0, 100) || ''}`;
-                        }).join('\n')
-                      : `Ничего не найдено по «${args?.query}»`,
-                  }],
-                };
-                break;
-              }
-
-              case 'get_component': {
-                const compName = args?.name?.trim();
-                const explicitSource = args?.source ?? 'auto';
-
-                let comp = null;
-                let foundSource = '';
-
-                if (explicitSource === 'auto') {
-                  // try DF first (it has richer descriptions)
-                  comp = dfRegistry.find((c) => c.name.toLowerCase() === compName?.toLowerCase());
-                  foundSource = 'df';
-                  if (!comp) {
-                    comp = finaiRegistry.find((c) => c.name.toLowerCase() === compName?.toLowerCase());
-                    foundSource = 'finai';
-                  }
-                } else {
-                  const reg = explicitSource === 'df' ? dfRegistry : finaiRegistry;
-                  comp = reg.find((c) => c.name.toLowerCase() === compName?.toLowerCase());
-                  foundSource = explicitSource;
-                }
-
-                if (!comp) {
-                  result = { content: [{ type: 'text', text: `Компонент «${compName}» не найден.` }] };
-                  break;
-                }
-
-                const srcLabel = comp.source === 'df' ? 'df' : 'finai';
-                result = {
-                  content: [{
-                    type: 'text',
-                    text: `# ${comp.name}  (${srcLabel})\n` +
-                          `Категория: ${comp.category || 'Без категории'}\n` +
-                          `Что это: ${comp.description || 'Без описания'}\n\n` +
-                          `Примеры (stories): ${comp.examples.join(', ') || '—'}\n\n` +
-                          `Чтобы увидеть КОД — вызови get_examples("${comp.name}", source="${srcLabel}")`,
-                  }],
-                };
-                break;
-              }
-
-              case 'get_examples': {
-                const compName = args?.name?.trim();
-                const forceSource = args?.source;
-
-                // Determine source
-                let comp = dfRegistry.find((c) => c.name.toLowerCase() === compName?.toLowerCase());
-                let src = 'df';
-
-                if (!comp) {
-                  comp = finaiRegistry.find((c) => c.name.toLowerCase() === compName?.toLowerCase());
-                  src = 'finai';
-                }
-
-                if (forceSource) {
-                  const reg = forceSource === 'df' ? dfRegistry : finaiRegistry;
-                  comp = reg.find((c) => c.name.toLowerCase() === compName?.toLowerCase());
-                  src = forceSource;
-                }
-
-                if (!comp) {
-                  result = { content: [{ type: 'text', text: `Нет примеров для «${compName}»` }] };
-                  break;
-                }
-
-                let code = null;
-
-                if (src === 'df') {
-                  // find stories file
-                  const storyDir = join(DF_STORYBOOK, 'src', 'stories', comp.name);
-                  if (statSafe(storyDir)?.isDirectory()) {
-                    const storiesFiles = walk(storyDir, (n) => n.endsWith('.stories.tsx') || n.endsWith('.stories.ts'));
-                    if (storiesFiles.length > 0) {
-                      code = readSafe(storiesFiles[0]);
-                    }
-                  }
-                } else {
-                  // FINAI
-                  const compDir = join(FINAI_COMPONENTS, comp.name);
-                  if (statSafe(compDir)?.isDirectory()) {
-                    const storiesFile = readdirSync(compDir).find(
-                      (f) => f.endsWith('.stories.tsx') || f.endsWith('.stories.ts')
-                    );
-                    if (storiesFile) {
-                      code = readSafe(join(compDir, storiesFile));
-                    }
-                  }
-                }
-
-                if (!code) {
-                  result = { content: [{ type: 'text', text: `Не удалось прочитать stories для «${compName}» (${src})` }] };
-                  break;
-                }
-
-                result = {
-                  content: [{
-                    type: 'text',
-                    text: `// === ${src.toUpperCase()} UI-KIT: ${compName}\n\n${code}`,
-                  }],
-                };
-                break;
-              }
-
-              case 'list_components': {
-                const listSource = args?.source ?? 'all';
-                const listCategory = args?.category;
-
-                let parts = [];
-
-                if (listSource === 'all' || listSource === 'df') {
-                  let items = [...dfRegistry];
-                  if (listCategory) items = items.filter((c) => c.category === listCategory);
-                  if (items.length > 0) {
-                    parts.push(`## DF UI-KIT (${items.length} шт.)\n${items.map((c, i) => `${i + 1}. ${c.name}`).join('\n')}`);
-                  }
-                }
-
-                if (listSource === 'all' || listSource === 'finai') {
-                  let items = [...finaiRegistry];
-                  if (items.length > 0) {
-                    parts.push(`## FINAI UI-KIT (${items.length} шт.)\n${items.map((c, i) => `${i + 1}. ${c.name}`).join('\n')}`);
-                  }
-                }
-
-                result = {
-                  content: [{
-                    type: 'text',
-                    text: parts.join('\n\n') || 'Ничего не найдено',
-                  }],
-                };
-                break;
-              }
-
-              default:
-                error = { code: -32601, message: `Unknown tool: ${name}` };
-            }
+          case 'ping':
+            ok(id, {});
             break;
-          }
+
+          case 'tools/list':
+            ok(id, { tools: TOOLS });
+            break;
+
+          case 'tools/call':
+            ok(id, handleToolsCall(params));
+            break;
 
           default:
-            error = { code: -32601, message: `Unknown method: ${method}` };
+            fail(id, -32601, `Unknown method: ${method}`);
         }
       } catch (e) {
-        error = { code: -32603, message: e.message || String(e) };
+        fail(id, e.code ?? -32603, e.message || String(e));
       }
-
-      send(stdout, { jsonrpc: '2.0', id, error, result });
     }
   }
 }
